@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-navy font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-teal hover:bg-teal-light text-navy font-bold uppercase tracking-wider px-8 py-3.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-teal-glow hover:scale-105;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border-2 border-teal text-teal hover:bg-teal hover:text-navy font-bold uppercase tracking-wider px-8 py-3.5 rounded-full transition-all duration-300;
+  }
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-bold uppercase tracking-wider px-8 py-3.5 rounded-full transition-all duration-300;
+  }
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8 lg:px-16;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  .heading-script {
+    @apply font-script text-teal;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-teal-glow;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal focus:border-transparent transition-all bg-white;
+  }
+  .admin-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal text-sm;
+  }
+  .admin-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6;
+  }
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-teal to-teal-light;
+  }
+  .glow-teal {
+    box-shadow: 0 0 30px rgba(0, 183, 199, 0.4);
+  }
+}
