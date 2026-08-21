@@ -57,14 +57,30 @@ const About = () => {
   const stats = aboutPage.stats?.length
     ? aboutPage.stats
     : [
-        { label: 'Events DJ\'d', value: '500+' },
-        { label: 'Years Experience', value: '10+' },
+        { label: 'Events DJ\'d', value: '2500+' },
+        { label: 'Years Experience', value: '30+' },
+        { label: '5-Star Reviews', value: '250+' },
+        { label: 'Tri-State Events', value: '1000+' },
       ];
 
   const whyChooseUs = aboutPage.whyChooseUs?.length
     ? aboutPage.whyChooseUs
     : [
-        { title: 'One-Stop Entertainment', description: 'DJ, photo booth, photography, and videography from one provider.' },
+        {
+          title: 'One-Stop Entertainment',
+          description:
+            'DJ, photo booth, photography, and videography — everything you need from one trusted entertainment company.',
+        },
+        {
+          title: 'Premium Equipment',
+          description:
+            'Professional-grade sound systems, wireless microphones, dynamic lighting, special effects, and photo booths.',
+        },
+        {
+          title: 'Responsive Communication',
+          description:
+            'Quick responses and dedicated contact with DJ Adam from booking until the end of your event.',
+        },
       ];
 
   return (
@@ -83,7 +99,7 @@ const About = () => {
               aboutPage.heroImageUrl ||
               'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=1920&q=80'
             }
-            alt="Adam Aronow DJ at event"
+            alt="DJ Adam at event"
             className="w-full h-full object-cover"
             loading="eager"
           />
@@ -92,7 +108,7 @@ const About = () => {
         <div className="relative z-10 container-custom text-center px-4 pt-28 pb-16 animate-slide-up">
           <p className="heading-script text-2xl md:text-3xl mb-3">Meet Your DJ</p>
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
-            {aboutPage.heroTitle || 'About Adam Aronow'}
+            {aboutPage.heroTitle || 'About DJ Adam'}
           </h1>
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             {aboutPage.heroSubtitle ||
@@ -109,8 +125,8 @@ const About = () => {
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
                   src={aboutPage.storyImageUrl || '/about.png'}
-                  alt="Adam Aronow professional DJ"
-                  className="w-full h-[400px] md:h-[500px] object-cover"
+                  alt="DJ Adam professional photo"
+                  className="w-full h-[400px] md:h-[500px] object-cover object-top"
                   loading="lazy"
                 />
               </div>
@@ -143,7 +159,7 @@ const About = () => {
             />
             <p className="text-gray-300 text-lg md:text-xl leading-relaxed -mt-8">
               {aboutPage.missionContent ||
-                'To create unforgettable celebrations by combining professional DJ expertise, personalized service, and genuine passion for making people happy. Every event I DJ is treated as if it were my own family\'s celebration.'}
+                'To create unforgettable celebrations by combining professional DJ expertise, personalized service, and genuine passion for making people happy. Every event is treated as if it were our own family\'s celebration. It\'s your day, your way.'}
             </p>
           </div>
         </div>
@@ -206,7 +222,7 @@ const About = () => {
           <SectionHeading
             scriptAccent="The Difference"
             title="Why Choose This Magic Moment"
-            subtitle="When you book Adam Aronow, you're not just hiring a DJ — you're partnering with a dedicated entertainment professional who treats your celebration like his own."
+            subtitle="When you book DJ Adam, you're not just hiring a DJ — you're partnering with a dedicated entertainment company that treats your celebration like our own."
             light
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

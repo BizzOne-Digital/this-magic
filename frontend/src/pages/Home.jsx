@@ -11,6 +11,7 @@ import PromotionsSection from '../components/home/PromotionsSection';
 import TestimonialsPreview from '../components/home/TestimonialsPreview';
 import GalleryPreview from '../components/home/GalleryPreview';
 import VideoShowcase from '../components/home/VideoShowcase';
+import { PHONE_DISPLAY, PHONE_TEL } from '../constants/site';
 import {
   servicesAPI,
   testimonialsAPI,
@@ -83,15 +84,15 @@ const Home = () => {
           </h2>
           <p className="text-navy/80 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
             Your date won&apos;t wait — and neither should you. Whether you&apos;re planning a dream wedding,
-            an epic Sweet 16, or an unforgettable private celebration, Adam Aronow is ready to bring the
+            an epic Sweet 16, or an unforgettable private celebration, DJ Adam is ready to bring the
             energy, elegance, and expertise your event deserves. Free consultations available.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button to="/contact" variant="navy">
-              Book Your Date
+            <Button href={`tel:${PHONE_TEL}`} variant="navy">
+              Call or Text DJ Adam Today
             </Button>
-            <Button to="/contact" variant="secondary" className="!border-navy !text-navy hover:!bg-navy hover:!text-white">
-              Check Availability
+            <Button href={`tel:${PHONE_TEL}`} variant="secondary" className="!border-navy !text-navy hover:!bg-navy hover:!text-white !text-lg !font-black">
+              {PHONE_DISPLAY}
             </Button>
           </div>
           <p className="mt-8 text-navy/60 text-sm">

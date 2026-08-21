@@ -1,5 +1,6 @@
 import SectionHeading from '../SectionHeading';
 import Button from '../Button';
+import { PHONE_TEL } from '../../constants/site';
 
 export const defaultVideos = [
   {
@@ -8,7 +9,7 @@ export const defaultVideos = [
     youtubeId: 'ntdPtc-SOTE',
     url: 'https://www.youtube.com/watch?v=ntdPtc-SOTE',
     description:
-      'Watch Adam Aronow in action at a real wedding — packed dance floor, seamless transitions, and the perfect mix of romance and celebration.',
+      'Watch DJ Adam in action at a real wedding — packed dance floor, seamless transitions, and the perfect mix of romance and celebration.',
   },
   {
     title: 'Bar & Bat Mitzvah Demo',
@@ -24,7 +25,7 @@ export const defaultVideos = [
     youtubeId: 'jEjG_ehduc4',
     url: 'https://www.youtube.com/watch?v=jEjG_ehduc4',
     description:
-      'Experience the energy of a Sweet 16 party with Adam Aronow — current hits, epic dance floor moments, and a celebration your teen will never forget.',
+      'Experience the energy of a Sweet 16 party with DJ Adam — current hits, epic dance floor moments, and a celebration your teen will never forget.',
   },
 ];
 
@@ -40,7 +41,7 @@ const VideoShowcase = ({ content, showCta = true }) => {
           title={section.title || 'See The Magic In Action'}
           subtitle={
             section.subtitle ||
-            'Real event footage from weddings, Sweet 16s, and Bar & Bat Mitzvah celebrations across New Jersey. See why couples, families, and event planners trust Adam Aronow to deliver unforgettable entertainment.'
+            'Real event footage from weddings, Sweet 16s, and Bar & Bat Mitzvah celebrations across New Jersey. See why couples, families, and event planners trust DJ Adam to deliver unforgettable entertainment.'
           }
           light
         />
@@ -94,11 +95,11 @@ const VideoShowcase = ({ content, showCta = true }) => {
         {showCta && (
           <div className="text-center mt-16">
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              Ready to create your own unforgettable moment? Book Adam Aronow for your wedding, Sweet 16, Bar/Bat
+              Ready to create your own unforgettable moment? Call or text DJ Adam for your wedding, Sweet 16, Bar/Bat
               Mitzvah, or private celebration.
             </p>
-            <Button to="/contact" variant="primary">
-              Book Your Date
+            <Button href={`tel:${PHONE_TEL}`} variant="primary">
+              Call or Text DJ Adam Today
             </Button>
           </div>
         )}

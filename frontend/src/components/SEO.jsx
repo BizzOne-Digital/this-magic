@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, image, url }) => {
   const siteName = 'This Magic Moment';
-  const fullTitle = title ? `${title} | ${siteName}` : `${siteName} | Premium DJ & Event Entertainment | Adam Aronow`;
+  const fullTitle = title ? `${title} | ${siteName}` : `${siteName} | Premium DJ & Event Entertainment | DJ Adam`;
   const desc = description || 'Professional DJ services for weddings, Sweet 16s, birthdays & private events in New Jersey. Photo booth, photography & videography available.';
   const ogImage = image || 'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=1200&q=80';
   const pageUrl = url || 'https://www.thismagicmomentnj.com';

@@ -9,6 +9,7 @@
     "dev": "nodemon src/server.js",
     "seed": "node src/utils/seed.js",
     "sync-testimonials": "node src/utils/syncRealTestimonials.js",
+    "update-content": "node src/utils/updateClientFeedback.js",
     "add-testimonial": "node src/utils/addClientTestimonial.js"
   },
   "dependencies": {

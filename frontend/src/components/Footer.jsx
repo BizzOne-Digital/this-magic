@@ -1,38 +1,39 @@
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
-import { HiOutlineSpeakerWave } from 'react-icons/hi2';
+import { PHONE_TEL } from '../constants/site';
 
 const Footer = ({ content }) => {
   const social = content?.social || {};
   const footer = content?.footer || {};
   const contact = content?.contact || {};
+  const phone = contact.phone || '732-829-2344';
+  const email = contact.email || 'djadam@thismagicmomentnj.com';
+  const logoSrc = content?.logo?.imageUrl || '/logo.png';
 
   return (
     <footer className="bg-navy text-white">
       <div className="container-custom mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          {/* Logo */}
-          <div className="flex items-center gap-2 justify-center md:justify-start">
-            {content?.logo?.imageUrl ? (
-              <img src={content.logo.imageUrl} alt="This Magic Moment" className="h-10 w-auto" />
-            ) : (
-              <>
-                <HiOutlineSpeakerWave className="text-teal text-2xl" />
-                <div>
-                  <span className="font-bold text-sm block">this magic moment</span>
-                  <span className="text-teal text-xs">adam aronow</span>
-                </div>
-              </>
-            )}
+          <div className="flex items-center gap-3 justify-center md:justify-start">
+            <img
+              src={logoSrc}
+              alt="This Magic Moment"
+              className="h-12 w-auto object-contain"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+            <div>
+              <span className="font-black text-base md:text-lg block uppercase tracking-wide">This Magic Moment</span>
+              <span className="text-teal text-sm font-bold uppercase tracking-wider">DJ Adam</span>
+            </div>
           </div>
 
-          {/* Copyright */}
           <div className="text-center text-sm text-gray-400">
             <p>{footer.copyright || '© 2026 This Magic Moment. All Rights Reserved.'}</p>
             <p className="mt-1 text-xs">{footer.tagline}</p>
           </div>
 
-          {/* Social */}
           <div className="flex items-center gap-4 justify-center md:justify-end">
             <a
               href={social.instagramUrl || 'https://instagram.com/this_magic_moment_nj'}
@@ -55,16 +56,18 @@ const Footer = ({ content }) => {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-white/10 text-center text-xs text-gray-500">
-          <p>
-            {contact.phone && <span>{contact.phone} • </span>}
-            {contact.email && (
-              <a href={`mailto:${contact.email}`} className="hover:text-teal transition-colors">
-                {contact.email}
-              </a>
-            )}
+        <div className="mt-8 pt-8 border-t border-white/10 text-center">
+          <p className="text-lg md:text-xl font-bold text-white">
+            <a href={`tel:${PHONE_TEL}`} className="hover:text-teal transition-colors">
+              {phone}
+            </a>
           </p>
-          <p className="mt-2">
+          <p className="mt-2 text-base md:text-lg">
+            <a href={`mailto:${email}`} className="text-teal hover:text-white transition-colors font-semibold">
+              {email}
+            </a>
+          </p>
+          <p className="mt-4 text-xs text-gray-500">
             <Link to="/admin/login" className="hover:text-teal transition-colors opacity-50">
               Admin
             </Link>

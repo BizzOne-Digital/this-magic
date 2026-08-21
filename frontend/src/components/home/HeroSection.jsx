@@ -1,17 +1,18 @@
 import { FiArrowDown } from 'react-icons/fi';
-import { HiOutlineSpeakerWave } from 'react-icons/hi2';
 import Button from '../Button';
+import { PHONE_DISPLAY, PHONE_TEL } from '../../constants/site';
 
 const HeroSection = ({ content }) => {
   const hero = content?.hero || {};
   const parts = hero.headlineParts || {};
+  const primaryCta = hero.primaryCta || 'Call or Text DJ Adam Today';
+  const secondaryCta = hero.secondaryCta || PHONE_DISPLAY;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={hero.imageUrl || 'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=1920&q=80'}
+          src={hero.imageUrl || '/hero.png'}
           alt="DJ performing at a premium event"
           className="w-full h-full object-cover"
           loading="eager"
@@ -20,15 +21,7 @@ const HeroSection = ({ content }) => {
         <div className="absolute inset-0 bg-navy/40" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 container-custom text-center px-4 pt-24 pb-16">
-        <div className="flex items-center justify-center gap-2 mb-6 animate-fade-in">
-          <HiOutlineSpeakerWave className="text-teal text-3xl md:text-4xl" />
-          <span className="text-teal text-sm md:text-base font-semibold uppercase tracking-[0.3em]">
-            This Magic Moment
-          </span>
-        </div>
-
         <h1 className="text-white mb-6 animate-slide-up">
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none">
             {parts.line1 || 'the vibe'}
@@ -39,7 +32,7 @@ const HeroSection = ({ content }) => {
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none mt-1">
             {parts.line3 || 'the dj'}
           </span>
-          <span className="block heading-script text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-4 normal-case">
+          <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none mt-4">
             {parts.scriptLine || 'your event needs'}
           </span>
         </h1>
@@ -50,11 +43,11 @@ const HeroSection = ({ content }) => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up">
-          <Button to="/contact" variant="primary">
-            {hero.primaryCta || 'Book Your Date'}
+          <Button href={`tel:${PHONE_TEL}`} variant="primary">
+            {primaryCta}
           </Button>
-          <Button to="/contact" variant="outline">
-            {hero.secondaryCta || 'Check Availability'}
+          <Button href={`tel:${PHONE_TEL}`} variant="outline" className="!text-lg !font-black tracking-wide">
+            {secondaryCta}
           </Button>
         </div>
 
@@ -63,7 +56,6 @@ const HeroSection = ({ content }) => {
         </p>
       </div>
 
-      {/* Scroll Indicator */}
       <a
         href="#services"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 hover:text-teal transition-colors animate-bounce"

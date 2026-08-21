@@ -19,8 +19,8 @@ const contentSchema = new mongoose.Schema(
         default: 'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=1920&q=80',
       },
       publicId: { type: String, default: '' },
-      primaryCta: { type: String, default: 'Book Your Date' },
-      secondaryCta: { type: String, default: 'Check Availability' },
+      primaryCta: { type: String, default: 'Call or Text DJ Adam Today' },
+      secondaryCta: { type: String, default: '732 829 2344' },
     },
     about: {
       headline: { type: String, default: 'MAKING MOMENTS' },
@@ -52,15 +52,15 @@ const contentSchema = new mongoose.Schema(
       publicId: { type: String, default: '' },
     },
     seo: {
-      homeTitle: { type: String, default: 'This Magic Moment | Premium DJ & Event Entertainment | Adam Aronow' },
+      homeTitle: { type: String, default: 'This Magic Moment | Premium DJ & Event Entertainment | DJ Adam' },
       homeDescription: {
         type: String,
         default: 'Professional DJ services for weddings, Sweet 16s, birthdays & private events in New Jersey. Photo booth, photography & videography available.',
       },
-      aboutTitle: { type: String, default: 'About Adam Aronow | This Magic Moment DJ' },
+      aboutTitle: { type: String, default: 'About DJ Adam | This Magic Moment DJ' },
       aboutDescription: {
         type: String,
-        default: 'Meet Adam Aronow — a professional DJ and event entertainer dedicated to creating unforgettable moments across New Jersey.',
+        default: 'Meet DJ Adam — a professional DJ and event entertainer dedicated to creating unforgettable moments across New Jersey.',
       },
       testimonialsTitle: { type: String, default: 'Client Testimonials | This Magic Moment' },
       testimonialsDescription: {
@@ -70,11 +70,11 @@ const contentSchema = new mongoose.Schema(
       contactTitle: { type: String, default: 'Contact & Book Your Date | This Magic Moment' },
       contactDescription: {
         type: String,
-        default: 'Get a quote, check availability, and book Adam Aronow for your next wedding, Sweet 16, or celebration.',
+        default: 'Get a quote, check availability, and book DJ Adam for your next wedding, Sweet 16, or celebration.',
       },
     },
     aboutPage: {
-      heroTitle: { type: String, default: 'About Adam Aronow' },
+      heroTitle: { type: String, default: 'About DJ Adam' },
       heroSubtitle: { type: String, default: 'The DJ Who Brings Energy, Elegance & Unforgettable Moments' },
       heroImageUrl: { type: String, default: '' },
       heroPublicId: { type: String, default: '' },
@@ -92,6 +92,11 @@ const contentSchema = new mongoose.Schema(
       heroTitle: { type: String, default: 'What Our Clients Say' },
       heroSubtitle: { type: String, default: 'Real reviews from real celebrations across New Jersey' },
       introText: { type: String, default: '' },
+    },
+    reviewLinks: {
+      theKnot: { type: String, default: '' },
+      weddingWire: { type: String, default: '' },
+      google: { type: String, default: '' },
     },
     contactPage: {
       heroTitle: { type: String, default: "Let's Connect" },

@@ -17,7 +17,7 @@ const AboutImage = ({ src, alt, className }) => {
       alt={alt}
       className={className}
       loading="lazy"
-      onError={() => setImgSrc('/img1.png')}
+      onError={() => setImgSrc('/about.png')}
     />
   );
 };
@@ -33,7 +33,7 @@ const AboutPreview = ({ content }) => {
   const paragraphs = about.paragraphs?.length
     ? about.paragraphs
     : [
-        'Adam Aronow is a professional DJ and event entertainer based in New Jersey, dedicated to creating celebrations that people remember for a lifetime.',
+        'DJ Adam is a professional DJ and event entertainer based in New Jersey, dedicated to creating celebrations that people remember for a lifetime.',
         'What sets This Magic Moment apart is the personal touch — curated soundtracks, seamless event flow, and entertainment that reflects your unique vision.',
       ];
   const images = getAboutImages(about);
@@ -43,43 +43,16 @@ const AboutPreview = ({ content }) => {
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className="relative animate-fade-in">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="rounded-2xl overflow-hidden shadow-xl card-hover">
-                  <AboutImage
-                    src={images[0]}
-                    alt="DJ Adam Aronow at a live event"
-                    className="w-full h-64 md:h-72 object-cover"
-                  />
-                </div>
-                <div className="rounded-2xl overflow-hidden shadow-xl card-hover">
-                  <AboutImage
-                    src={images[2]}
-                    alt="Photo booth fun at celebration"
-                    className="w-full h-40 md:h-48 object-cover"
-                  />
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="rounded-2xl overflow-hidden shadow-xl card-hover">
-                  <AboutImage
-                    src={images[1]}
-                    alt="Wedding dance floor celebration"
-                    className="w-full h-40 md:h-48 object-cover"
-                  />
-                </div>
-                <div className="rounded-2xl overflow-hidden shadow-xl card-hover">
-                  <AboutImage
-                    src={images[3]}
-                    alt="Private event entertainment"
-                    className="w-full h-64 md:h-72 object-cover"
-                  />
-                </div>
-              </div>
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <AboutImage
+                src="/about.png"
+                alt="DJ Adam at a live event"
+                className="w-full h-[420px] md:h-[520px] object-cover object-top"
+              />
             </div>
 
             <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-teal text-navy rounded-2xl p-6 shadow-2xl animate-pulse-glow hidden sm:block">
-              <p className="text-3xl font-black">10+</p>
+              <p className="text-3xl font-black">30+</p>
               <p className="text-xs font-bold uppercase tracking-wider">Years Experience</p>
             </div>
           </div>
@@ -98,10 +71,14 @@ const AboutPreview = ({ content }) => {
               ))}
             </div>
 
+            <p className="mt-6 text-2xl font-black text-navy uppercase tracking-wide">
+              It&apos;s your day, your way.
+            </p>
+
             <div className="mt-8 grid grid-cols-2 gap-4">
               {[
-                { label: "Events DJ'd", value: '500+' },
-                { label: '5-Star Reviews', value: '100+' },
+                { label: "Events DJ'd", value: '2500+' },
+                { label: '5-Star Reviews', value: '250+' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-navy/5 rounded-xl p-4 text-center">
                   <p className="text-2xl font-black text-teal">{stat.value}</p>

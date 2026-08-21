@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import { PageLoader, SkeletonCard } from '../components/LoadingSpinner';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
+import { PHONE_DISPLAY, PHONE_TEL } from '../constants/site';
 import { servicesAPI } from '../services/api';
 import { getServiceIcon } from '../utils/serviceIcons';
 import VideoShowcase from '../components/home/VideoShowcase';
@@ -28,7 +29,7 @@ const Services = () => {
     <>
       <SEO
         title="Our Services | Premium DJ & Event Entertainment"
-        description="Explore wedding DJ, Sweet 16, birthday party, photo booth, photography, and videography services from This Magic Moment — Adam Aronow, New Jersey."
+        description="Explore wedding DJ, Sweet 16, birthday party, photo booth, photography, and videography services from This Magic Moment — DJ Adam, New Jersey."
       />
 
       {/* Hero */}
@@ -44,7 +45,7 @@ const Services = () => {
           </h1>
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed animate-fade-in">
             From unforgettable wedding receptions to high-energy Sweet 16s, milestone birthdays, and premium private
-            events — Adam Aronow delivers professional DJ entertainment and complete event services across New Jersey
+            events — DJ Adam delivers professional DJ entertainment and complete event services across New Jersey
             and the Tri-State area. Every service is personalized, professionally executed, and designed to create
             moments your guests will talk about for years.
           </p>
@@ -145,7 +146,7 @@ const Services = () => {
           <SectionHeading
             scriptAccent="Save More"
             title="Bundle & Save"
-            subtitle="Combine DJ services with photo booth, photography, and videography for complete event coverage — one trusted partner, one seamless experience, and exclusive package pricing."
+            subtitle="Combine DJ services with photo booth, photography, and videography for complete event coverage — one trusted entertainment company, one seamless experience, and exclusive package pricing."
             light
           />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-10">
@@ -176,12 +177,14 @@ const Services = () => {
             Ready to Make Your Event Unforgettable?
           </h2>
           <p className="text-navy/80 text-lg max-w-2xl mx-auto mb-8">
-            Check availability, get a personalized quote, and let Adam Aronow bring the vibe, the voice, and the DJ
-            your event needs.
+            Call or text DJ Adam today — bring the vibe, the voice, and the DJ your event needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/contact" variant="navy">
-              Book Your Date
+            <Button href={`tel:${PHONE_TEL}`} variant="navy">
+              Call or Text DJ Adam Today
+            </Button>
+            <Button href={`tel:${PHONE_TEL}`} variant="secondary" className="!border-navy !text-navy hover:!bg-navy hover:!text-white !font-black">
+              {PHONE_DISPLAY}
             </Button>
             <Button to="/testimonials" variant="secondary" className="!border-navy !text-navy hover:!bg-navy hover:!text-white">
               Read Reviews

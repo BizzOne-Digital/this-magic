@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { HiOutlineSpeakerWave } from 'react-icons/hi2';
 import Button from './Button';
 
 const navLinks = [
@@ -26,6 +25,7 @@ const Header = ({ logoUrl, transparent = false }) => {
   useEffect(() => setIsOpen(false), [location]);
 
   const isActive = (path) => location.pathname === path;
+  const logoSrc = logoUrl || '/logo.png';
 
   return (
     <header
@@ -34,23 +34,26 @@ const Header = ({ logoUrl, transparent = false }) => {
       }`}
     >
       <div className="container-custom mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+        <div className="flex items-center justify-between h-20 md:h-24">
           <Link to="/" className="flex items-center gap-3 group">
-            {logoUrl ? (
-              <img src={logoUrl} alt="This Magic Moment Logo" className="h-12 w-auto" />
-            ) : (
-              <div className="flex items-center gap-2">
-                <HiOutlineSpeakerWave className="text-teal text-3xl group-hover:animate-pulse" />
-                <div>
-                  <span className="text-white font-bold text-lg leading-tight block">this magic moment</span>
-                  <span className="text-teal text-xs tracking-widest uppercase">adam aronow</span>
-                </div>
-              </div>
-            )}
+            <img
+              src={logoSrc}
+              alt="This Magic Moment — DJ Adam"
+              className="h-14 md:h-16 w-auto object-contain"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
+            />
+            <div>
+              <span className="text-white font-black text-lg md:text-2xl leading-tight block uppercase tracking-wide">
+                This Magic Moment
+              </span>
+              <span className="text-teal text-sm md:text-base font-bold tracking-widest uppercase">
+                DJ Adam
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
@@ -64,11 +67,10 @@ const Header = ({ logoUrl, transparent = false }) => {
               </Link>
             ))}
             <Button to="/contact" variant="primary" className="!px-6 !py-2.5 !text-sm">
-              Let's Talk
+              Let&apos;s Talk
             </Button>
           </nav>
 
-          {/* Mobile Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden text-white text-2xl p-2"
@@ -79,7 +81,6 @@ const Header = ({ logoUrl, transparent = false }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden bg-navy/98 backdrop-blur-md border-t border-white/10">
           <nav className="container-custom mx-auto px-4 py-6 flex flex-col gap-4">
@@ -95,7 +96,7 @@ const Header = ({ logoUrl, transparent = false }) => {
               </Link>
             ))}
             <Button to="/contact" variant="primary" className="mt-4 justify-center">
-              Let's Talk
+              Let&apos;s Talk
             </Button>
           </nav>
         </div>

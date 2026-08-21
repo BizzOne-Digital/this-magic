@@ -35,32 +35,26 @@ const IconicServicesRow = ({ services }) => {
 };
 
 const ServicesSection = ({ services, loading }) => {
+  const showIconRow = !loading && services.length > 0;
+
   return (
     <>
-      {/* Iconic Services Row */}
-      <section className="section-padding bg-white -mt-16 relative z-10">
-        <div className="container-custom">
-          <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 md:p-12 -translate-y-8">
-            {loading ? (
-              <div className="grid grid-cols-5 gap-4">
-                {[...Array(5)].map((_, i) => (
-                  <SkeletonCard key={i} />
-                ))}
-              </div>
-            ) : (
+      {showIconRow && (
+        <section className="section-padding bg-white -mt-16 relative z-10">
+          <div className="container-custom">
+            <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-8 md:p-12 -translate-y-8">
               <IconicServicesRow services={services} />
-            )}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      {/* Full Services Grid */}
-      <section id="services" className="section-padding bg-navy">
+      <section id="services" className={`section-padding bg-navy ${showIconRow ? '' : 'pt-32'}`}>
         <div className="container-custom">
           <SectionHeading
             scriptAccent="What We Offer"
             title="Premium Event Services"
-            subtitle="From intimate gatherings to grand ballroom celebrations, Adam Aronow delivers professional DJ entertainment and complete event services tailored to your vision. Every package includes premium sound, expert MC services, and personalized planning."
+            subtitle="From intimate gatherings to grand ballroom celebrations, DJ Adam delivers professional DJ entertainment and complete event services tailored to your vision. Every package includes premium sound, expert MC services, and personalized planning."
             light
           />
 
@@ -133,7 +127,7 @@ const ServicesSection = ({ services, loading }) => {
           <div className="text-center mt-12 animate-fade-in space-y-4">
             <p className="text-gray-400 mb-2 max-w-2xl mx-auto">
               Need a custom package? Combine DJ services with photo booth, photography, and videography
-              for complete event coverage — all from one trusted entertainment partner.
+              for complete event coverage — all from one trusted entertainment company.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button to="/services" variant="primary">

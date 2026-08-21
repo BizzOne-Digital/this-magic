@@ -8,13 +8,14 @@ import SectionHeading from '../components/SectionHeading';
 import TestimonialCard from '../components/TestimonialCard';
 import SubmitTestimonialForm from '../components/SubmitTestimonialForm';
 import Button from '../components/Button';
+import ReviewLinks from '../components/ReviewLinks';
 import { testimonialsAPI } from '../services/api';
 
 const statItems = [
-  { icon: MdCelebration, label: '500+ Events', sub: 'Celebrations DJ\'d' },
+  { icon: MdCelebration, label: '2500+ Events', sub: 'Celebrations DJ\'d' },
   { icon: FiStar, label: '5-Star Rated', sub: 'Consistently Top Reviews' },
-  { icon: FiUsers, label: '100+ Reviews', sub: 'Happy Clients' },
-  { icon: FiAward, label: '10+ Years', sub: 'Professional Experience' },
+  { icon: FiUsers, label: '250+ Reviews', sub: 'Happy Clients' },
+  { icon: FiAward, label: '30+ Years', sub: 'Professional Experience' },
 ];
 
 const Testimonials = () => {
@@ -89,6 +90,18 @@ const Testimonials = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-navy border-t border-white/10">
+        <div className="container-custom">
+          <SectionHeading
+            scriptAccent="Verified Reviews"
+            title="Read More on The Knot, WeddingWire & Google"
+            subtitle="See hundreds of verified reviews from real couples and families who booked This Magic Moment."
+            light
+          />
+          <ReviewLinks links={content.reviewLinks} />
         </div>
       </section>
 

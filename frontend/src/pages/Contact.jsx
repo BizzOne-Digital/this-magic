@@ -51,8 +51,9 @@ const Contact = () => {
     ? contactPage.faqs
     : [
         {
-          question: 'How far in advance should I book?',
-          answer: 'We recommend booking 6-12 months in advance for weddings and popular dates.',
+          question: "What happens if you're sick on our event day?",
+          answer:
+            'We have a network of equally qualified professional DJs who can step in if an emergency ever arises. In 25+ years, this has never been an issue — but your peace of mind is our priority.',
         },
       ];
 
