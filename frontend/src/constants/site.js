@@ -8,6 +8,7 @@ export const PHONE_DISPLAY = '732 829 2344';
 export const PHONE_TEL = '+17328292344';
 
 export const LOGO_PATH = '/logo.png';
+export const DJ_PHOTO_PATH = '/public.png';
 export const WEDDING_DEMO_VIDEO = '/wedding-demo.mp4';
 
 export const getLogoUrl = (logoUrl) =>

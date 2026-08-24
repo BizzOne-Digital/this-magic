@@ -13,7 +13,7 @@ const MainLayout = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header logoUrl={content?.logo?.imageUrl} transparent />
+      <Header logoUrl={content?.logo?.imageUrl} />
       <main className="flex-1">
         <Outlet context={{ content }} />
       </main>

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from '../Button';
 import SectionHeading from '../SectionHeading';
 
+const DJ_PHOTO = '/public.png';
 const collageImages = ['/img1.png', '/img2.png', '/img3.png', '/img4.png'];
 
 const AboutImage = ({ src, alt, className }) => {
@@ -17,7 +18,7 @@ const AboutImage = ({ src, alt, className }) => {
       alt={alt}
       className={className}
       loading="lazy"
-      onError={() => setImgSrc('/about.png')}
+      onError={() => setImgSrc(DJ_PHOTO)}
     />
   );
 };
@@ -45,7 +46,7 @@ const AboutPreview = ({ content }) => {
           <div className="relative animate-fade-in">
             <div className="rounded-2xl overflow-hidden shadow-2xl">
               <AboutImage
-                src="/about.png"
+                src={DJ_PHOTO}
                 alt="DJ Adam at a live event"
                 className="w-full h-[420px] md:h-[520px] object-cover object-top"
               />
