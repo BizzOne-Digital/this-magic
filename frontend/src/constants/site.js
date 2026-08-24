@@ -6,3 +6,17 @@ export const REVIEW_LINKS = {
 
 export const PHONE_DISPLAY = '732 829 2344';
 export const PHONE_TEL = '+17328292344';
+
+export const LOGO_PATH = '/logo.png';
+export const WEDDING_DEMO_VIDEO = '/wedding-demo.mp4';
+
+export const getLogoUrl = (logoUrl) =>
+  logoUrl && (logoUrl.startsWith('http') || logoUrl.startsWith('/')) ? logoUrl : LOGO_PATH;
+
+export const WEDDING_DEMO = {
+  title: 'Wedding Demo',
+  category: 'Weddings',
+  videoSrc: WEDDING_DEMO_VIDEO,
+  description:
+    'Watch DJ Adam in action at a real wedding — packed dance floor, seamless transitions, and the perfect mix of romance and celebration.',
+};

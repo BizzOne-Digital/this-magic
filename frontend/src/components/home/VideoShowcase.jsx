@@ -1,16 +1,8 @@
 import SectionHeading from '../SectionHeading';
 import Button from '../Button';
-import { PHONE_TEL } from '../../constants/site';
+import { PHONE_TEL, WEDDING_DEMO } from '../../constants/site';
 
 export const defaultVideos = [
-  {
-    title: 'Wedding Demo',
-    category: 'Weddings',
-    youtubeId: 'ntdPtc-SOTE',
-    url: 'https://www.youtube.com/watch?v=ntdPtc-SOTE',
-    description:
-      'Watch DJ Adam in action at a real wedding — packed dance floor, seamless transitions, and the perfect mix of romance and celebration.',
-  },
   {
     title: 'Bar & Bat Mitzvah Demo',
     category: 'Bar/Bat Mitzvah',
@@ -29,9 +21,49 @@ export const defaultVideos = [
   },
 ];
 
+const VideoEmbed = ({ video }) => {
+  if (video.videoSrc) {
+    return (
+      <video
+        controls
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover bg-black"
+        poster={video.poster}
+      >
+        <source src={video.videoSrc} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    );
+  }
+
+  if (video.youtubeId) {
+    return (
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?rel=0`}
+        title={video.title}
+        className="absolute inset-0 w-full h-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        loading="lazy"
+      />
+    );
+  }
+
+  return null;
+};
+
+const buildVideoList = (section) => {
+  const cmsVideos = section.items?.length ? section.items : defaultVideos;
+  const withoutYoutubeWedding = cmsVideos.filter(
+    (video) => !(video.youtubeId === 'ntdPtc-SOTE' || video.title?.toLowerCase() === 'wedding demo')
+  );
+  return [WEDDING_DEMO, ...withoutYoutubeWedding];
+};
+
 const VideoShowcase = ({ content, showCta = true }) => {
   const section = content?.videos || {};
-  const videos = section.items?.length ? section.items : defaultVideos;
+  const videos = buildVideoList(section);
 
   return (
     <section className="section-padding bg-navy">
@@ -49,28 +81,17 @@ const VideoShowcase = ({ content, showCta = true }) => {
         <div className="space-y-16">
           {videos.map((video, index) => (
             <article
-              key={video.youtubeId || video.url || index}
+              key={video.videoSrc || video.youtubeId || video.url || index}
               className={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ${
                 index % 2 === 1 ? 'lg:flex-row-reverse' : ''
               }`}
             >
-              {/* Video embed — full width within its column */}
-              <div
-                className={`w-full ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}
-              >
+              <div className={`w-full ${index % 2 === 1 ? 'lg:order-2' : 'lg:order-1'}`}>
                 <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?rel=0`}
-                    title={video.title}
-                    className="absolute inset-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    loading="lazy"
-                  />
+                  <VideoEmbed video={video} />
                 </div>
               </div>
 
-              {/* Text */}
               <div className={`${index % 2 === 1 ? 'lg:order-1' : 'lg:order-2'}`}>
                 <span className="inline-block bg-teal/20 text-teal text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4">
                   {video.category}
@@ -79,14 +100,16 @@ const VideoShowcase = ({ content, showCta = true }) => {
                   {video.title}
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-6">{video.description}</p>
-                <a
-                  href={video.url || `https://www.youtube.com/watch?v=${video.youtubeId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-teal text-sm font-semibold hover:underline"
-                >
-                  Watch on YouTube →
-                </a>
+                {video.url && !video.videoSrc && (
+                  <a
+                    href={video.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-teal text-sm font-semibold hover:underline"
+                  >
+                    Watch on YouTube →
+                  </a>
+                )}
               </div>
             </article>
           ))}

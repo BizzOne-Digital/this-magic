@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
-import { PHONE_TEL } from '../constants/site';
+import { getLogoUrl, LOGO_PATH, PHONE_TEL } from '../constants/site';
 
 const Footer = ({ content }) => {
   const social = content?.social || {};
@@ -8,26 +8,22 @@ const Footer = ({ content }) => {
   const contact = content?.contact || {};
   const phone = contact.phone || '732-829-2344';
   const email = contact.email || 'djadam@thismagicmomentnj.com';
-  const logoSrc = content?.logo?.imageUrl || '/logo.png';
+  const logoSrc = getLogoUrl(content?.logo?.imageUrl);
 
   return (
     <footer className="bg-navy text-white">
       <div className="container-custom mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-          <div className="flex items-center gap-3 justify-center md:justify-start">
+          <Link to="/" className="flex items-center justify-center md:justify-start">
             <img
               src={logoSrc}
-              alt="This Magic Moment"
-              className="h-12 w-auto object-contain"
+              alt="This Magic Moment — DJ Adam"
+              className="h-16 md:h-20 w-auto max-w-[240px] object-contain"
               onError={(e) => {
-                e.currentTarget.style.display = 'none';
+                e.currentTarget.src = LOGO_PATH;
               }}
             />
-            <div>
-              <span className="font-black text-base md:text-lg block uppercase tracking-wide">This Magic Moment</span>
-              <span className="text-teal text-sm font-bold uppercase tracking-wider">DJ Adam</span>
-            </div>
-          </div>
+          </Link>
 
           <div className="text-center text-sm text-gray-400">
             <p>{footer.copyright || '© 2026 This Magic Moment. All Rights Reserved.'}</p>
