@@ -124,7 +124,7 @@ const About = () => {
             <div className="animate-fade-in">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src={aboutPage.storyImageUrl || '/public1.png'}
+                  src="/public1.png"
                   alt="DJ Adam professional photo"
                   className="w-full h-[400px] md:h-[500px] object-cover object-top"
                   loading="lazy"
