@@ -4,6 +4,7 @@ import MainLayout from './layouts/MainLayout';
 import { PageLoader } from './components/LoadingSpinner';
 import ProtectedRoute from './admin/components/ProtectedRoute';
 import AdminLayout from './admin/layouts/AdminLayout';
+import ScrollToTop from './components/ScrollToTop';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -24,6 +25,7 @@ const AdminSettings = lazy(() => import('./admin/pages/Settings'));
 function App() {
   return (
     <Suspense fallback={<PageLoader />}>
+      <ScrollToTop />
       <Routes>
         {/* Public Routes */}
         <Route element={<MainLayout />}>

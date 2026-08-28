@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from '../Button';
 import SectionHeading from '../SectionHeading';
 
-const DJ_PHOTO = '/public.png';
+const DJ_PHOTO = '/public1.png';
 const collageImages = ['/img1.png', '/img2.png', '/img3.png', '/img4.png'];
 
 const AboutImage = ({ src, alt, className }) => {
