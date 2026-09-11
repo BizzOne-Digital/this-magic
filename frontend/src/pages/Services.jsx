@@ -160,7 +160,7 @@ const Services = () => {
                 className="bg-navy-light border border-white/10 rounded-2xl p-6 text-left card-hover"
               >
                 <h3 className="text-white font-bold uppercase tracking-wide mb-2">{pkg.title}</h3>
-                <p className="text-gray-400 text-sm">{pkg.desc}</p>
+                <p className="text-white text-sm">{pkg.desc}</p>
               </div>
             ))}
           </div>

@@ -93,17 +93,17 @@ const ServicesSection = ({ services, loading }) => {
                       <h3 className="text-xl font-bold text-white uppercase tracking-wide mb-3">
                         {service.title}
                       </h3>
-                      <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                      <p className="text-white text-sm leading-relaxed mb-4">
                         {service.shortDescription}
                       </p>
-                      <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
+                      <p className="text-white text-sm leading-relaxed mb-6 line-clamp-3">
                         {service.description}
                       </p>
 
                       {service.features?.length > 0 && (
                         <ul className="space-y-2 mb-6">
                           {service.features.slice(0, 4).map((feature) => (
-                            <li key={feature} className="flex items-start gap-2 text-sm text-gray-300">
+                            <li key={feature} className="flex items-start gap-2 text-sm text-white">
                               <FiCheck className="text-teal mt-0.5 flex-shrink-0" />
                               {feature}
                             </li>
@@ -125,7 +125,7 @@ const ServicesSection = ({ services, loading }) => {
           )}
 
           <div className="text-center mt-12 animate-fade-in space-y-4">
-            <p className="text-gray-400 mb-2 max-w-2xl mx-auto">
+            <p className="text-white mb-2 max-w-2xl mx-auto">
               Need a custom package? Combine DJ services with photo booth, photography, and videography
               for complete event coverage — all from one trusted entertainment company.
             </p>
