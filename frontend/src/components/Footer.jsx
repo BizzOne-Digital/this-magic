@@ -15,14 +15,16 @@ const Footer = ({ content }) => {
       <div className="container-custom mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
           <Link to="/" className="flex items-center justify-center md:justify-start">
-            <img
-              src={logoSrc}
-              alt="This Magic Moment — DJ Adam"
-              className="h-16 md:h-20 w-auto max-w-[240px] object-contain"
-              onError={(e) => {
-                e.currentTarget.src = LOGO_PATH;
-              }}
-            />
+            <div className="bg-white rounded-xl px-4 py-3 inline-flex items-center justify-center">
+              <img
+                src={logoSrc}
+                alt="This Magic Moment — DJ Adam"
+                className="h-14 md:h-16 w-auto max-w-[220px] object-contain"
+                onError={(e) => {
+                  e.currentTarget.src = LOGO_PATH;
+                }}
+              />
+            </div>
           </Link>
 
           <div className="text-center text-sm text-gray-400">
