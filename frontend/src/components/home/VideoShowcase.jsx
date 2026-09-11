@@ -99,7 +99,7 @@ const VideoShowcase = ({ content, showCta = true }) => {
                 <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-tight mb-4">
                   {video.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-6">{video.description}</p>
+                <p className="text-white leading-relaxed mb-6">{video.description}</p>
                 {video.url && !video.videoSrc && (
                   <a
                     href={video.url}
@@ -117,7 +117,7 @@ const VideoShowcase = ({ content, showCta = true }) => {
 
         {showCta && (
           <div className="text-center mt-16">
-            <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+            <p className="text-white mb-6 max-w-2xl mx-auto">
               Ready to create your own unforgettable moment? Call or text DJ Adam for your wedding, Sweet 16, Bar/Bat
               Mitzvah, or private celebration.
             </p>

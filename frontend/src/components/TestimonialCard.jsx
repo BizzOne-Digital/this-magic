@@ -44,7 +44,7 @@ const TestimonialCard = ({ testimonial, variant = 'grid', className = '' }) => {
               <div>
                 <p className="text-teal font-bold">{testimonial.clientName}</p>
                 {testimonial.location && (
-                  <p className="text-gray-400 text-sm flex items-center gap-1 mt-1">
+                  <p className="text-white text-sm flex items-center gap-1 mt-1">
                     <FiMapPin className="text-teal" />
                     {testimonial.location}
                   </p>
@@ -77,7 +77,7 @@ const TestimonialCard = ({ testimonial, variant = 'grid', className = '' }) => {
               &ldquo;{testimonial.review}&rdquo;
             </blockquote>
             <p className="text-teal font-bold">{testimonial.clientName}</p>
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 text-sm text-gray-400">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 text-sm text-white">
               <span className="bg-teal/20 text-teal px-3 py-1 rounded-full text-xs font-semibold uppercase">
                 {testimonial.eventType}
               </span>
@@ -115,13 +115,13 @@ const TestimonialCard = ({ testimonial, variant = 'grid', className = '' }) => {
             {testimonial.eventType}
           </span>
         </div>
-        <p className="text-gray-300 text-sm leading-relaxed mb-6 line-clamp-6">
+        <p className="text-white text-sm leading-relaxed mb-6 line-clamp-6">
           &ldquo;{testimonial.review}&rdquo;
         </p>
         <div className="border-t border-white/10 pt-4">
           <p className="text-white font-semibold text-sm">{testimonial.clientName}</p>
           {testimonial.location && (
-            <p className="text-gray-500 text-xs mt-1 flex items-center gap-1">
+            <p className="text-white text-xs mt-1 flex items-center gap-1">
               <FiMapPin className="text-teal" />
               {testimonial.location}
             </p>

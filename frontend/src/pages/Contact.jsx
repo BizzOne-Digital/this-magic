@@ -112,7 +112,7 @@ const Contact = () => {
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
             {contactPage.heroTitle || "Let's Connect"}
           </h1>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white text-lg max-w-2xl mx-auto leading-relaxed">
             {contactPage.heroSubtitle ||
               'Ready to create magic? Tell us about your event and let\'s start planning something unforgettable.'}
           </p>

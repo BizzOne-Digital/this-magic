@@ -37,7 +37,7 @@ const HeroSection = ({ content }) => {
           </span>
         </h1>
 
-        <p className="text-gray-300 text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in">
+        <p className="text-white text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in">
           {hero.subheading ||
             'Weddings • Sweet 16s • Birthdays • Private Events • Photo Booth • Photography • Videography'}
         </p>
@@ -51,7 +51,7 @@ const HeroSection = ({ content }) => {
           </Button>
         </div>
 
-        <p className="mt-8 text-gray-400 text-sm animate-fade-in">
+        <p className="mt-8 text-white text-sm animate-fade-in">
           Premium DJ & event entertainment across New Jersey & the Tri-State area
         </p>
       </div>

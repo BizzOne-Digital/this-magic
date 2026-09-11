@@ -43,7 +43,7 @@ const Services = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight mb-6 animate-slide-up">
             Our <span className="heading-script normal-case text-teal">Services</span>
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed animate-fade-in">
+          <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed animate-fade-in">
             From unforgettable wedding receptions to high-energy Sweet 16s, milestone birthdays, and premium private
             events — DJ Adam delivers professional DJ entertainment and complete event services across New Jersey
             and the Tri-State area. Every service is personalized, professionally executed, and designed to create

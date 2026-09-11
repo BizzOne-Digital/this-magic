@@ -63,7 +63,7 @@ const Testimonials = () => {
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
             {page.heroTitle || 'What Our Clients Say'}
           </h1>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed mb-6">
+          <p className="text-white text-lg max-w-3xl mx-auto leading-relaxed mb-6">
             {page.heroSubtitle ||
               'Real reviews from real celebrations across New Jersey and the Tri-State area'}
           </p>
@@ -160,7 +160,7 @@ const Testimonials = () => {
           )}
 
           {!loading && filtered.length === 0 && (
-            <p className="text-center text-gray-400 py-12">No testimonials found for this event type.</p>
+            <p className="text-center text-white py-12">No testimonials found for this event type.</p>
           )}
         </div>
       </section>

@@ -25,7 +25,7 @@ const ReviewLinks = ({ links, className = '' }) => {
         >
           <p className="text-white font-bold uppercase tracking-wide text-lg">{item.label}</p>
           <p className="text-teal text-sm mt-2">{item.sub}</p>
-          <p className="text-gray-400 text-xs mt-3">View reviews →</p>
+          <p className="text-white text-xs mt-3">View reviews →</p>
         </a>
       ))}
     </div>

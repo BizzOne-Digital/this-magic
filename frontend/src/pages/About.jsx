@@ -110,7 +110,7 @@ const About = () => {
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
             {aboutPage.heroTitle || 'About DJ Adam'}
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             {aboutPage.heroSubtitle ||
               'The DJ Who Brings Energy, Elegance & Unforgettable Moments to Every Celebration'}
           </p>
@@ -157,7 +157,7 @@ const About = () => {
               title={aboutPage.missionTitle || 'My Mission'}
               light
             />
-            <p className="text-gray-300 text-lg md:text-xl leading-relaxed -mt-8">
+            <p className="text-white text-lg md:text-xl leading-relaxed -mt-8">
               {aboutPage.missionContent ||
                 'To create unforgettable celebrations by combining professional DJ expertise, personalized service, and genuine passion for making people happy. Every event is treated as if it were our own family\'s celebration. It\'s your day, your way.'}
             </p>
@@ -236,7 +236,7 @@ const About = () => {
                 >
                   <Icon className="text-teal text-2xl mb-4" />
                   <h3 className="text-white font-bold uppercase tracking-wide mb-3">{item.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-white text-sm leading-relaxed">{item.description}</p>
                 </article>
               );
             })}
