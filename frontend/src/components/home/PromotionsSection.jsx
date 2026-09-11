@@ -58,7 +58,7 @@ const PromotionsSection = ({ promotions, loading }) => {
                       {promo.discountAmount && (
                         <div className="text-right">
                           <p className="text-teal text-3xl md:text-4xl font-black">{promo.discountAmount}</p>
-                          <p className="text-gray-500 text-xs uppercase tracking-wider">OFF</p>
+                          <p className="text-white text-xs uppercase tracking-wider">OFF</p>
                         </div>
                       )}
                     </div>
@@ -66,17 +66,17 @@ const PromotionsSection = ({ promotions, loading }) => {
                     <h3 className="text-xl md:text-2xl font-bold text-white uppercase tracking-wide mb-4">
                       {promo.title}
                     </h3>
-                    <p className="text-gray-400 leading-relaxed mb-6">{promo.description}</p>
+                    <p className="text-white leading-relaxed mb-6">{promo.description}</p>
 
                     {promo.terms && (
-                      <div className="flex items-start gap-2 text-gray-500 text-sm mb-4">
+                      <div className="flex items-start gap-2 text-white text-sm mb-4">
                         <FiCheckCircle className="text-teal mt-0.5 flex-shrink-0" />
                         <span>{promo.terms}</span>
                       </div>
                     )}
 
                     {promo.expiryDate && (
-                      <div className="flex items-center gap-2 text-gray-500 text-sm">
+                      <div className="flex items-center gap-2 text-white text-sm">
                         <FiClock className="text-teal" />
                         <span>Valid through {formatDate(promo.expiryDate)}</span>
                       </div>
