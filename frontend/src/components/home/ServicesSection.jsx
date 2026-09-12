@@ -6,20 +6,30 @@ import { SkeletonCard } from '../LoadingSpinner';
 import { getServiceIcon } from '../../utils/serviceIcons';
 
 const IconicServicesRow = ({ services }) => {
-  const topFive = services.slice(0, 5);
+  const topSix = services.slice(0, 6);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-4">
-      {topFive.map((service, index) => {
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-4">
+      {topSix.map((service, index) => {
         const Icon = getServiceIcon(service.icon);
+        const isTeal = index % 2 === 1;
         return (
-          <div
+          <Link
             key={service._id}
+            to={`/services#${service.slug}`}
             className="flex flex-col items-center text-center group animate-slide-up"
             style={{ animationDelay: `${index * 100}ms` }}
           >
-            <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-navy flex items-center justify-center mb-3 group-hover:bg-teal group-hover:scale-110 transition-all duration-300 card-hover">
-              <Icon className="text-teal text-2xl md:text-3xl group-hover:text-navy transition-colors" />
+            <div
+              className={`w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-all duration-300 card-hover ${
+                isTeal ? 'bg-teal' : 'bg-navy group-hover:bg-teal'
+              }`}
+            >
+              <Icon
+                className={`text-2xl md:text-3xl transition-colors ${
+                  isTeal ? 'text-navy' : 'text-teal group-hover:text-navy'
+                }`}
+              />
             </div>
             <h3 className="text-sm md:text-base font-bold text-navy uppercase tracking-wide">
               {service.title}
@@ -27,7 +37,7 @@ const IconicServicesRow = ({ services }) => {
             <p className="text-xs text-gray-500 mt-1 hidden md:block line-clamp-2">
               {service.shortDescription}
             </p>
-          </div>
+          </Link>
         );
       })}
     </div>
