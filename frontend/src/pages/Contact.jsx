@@ -67,8 +67,8 @@ const Contact = () => {
     {
       icon: FiMail,
       label: 'Email',
-      value: contact.email || 'djadam@thismagicmomentnj.com',
-      href: `mailto:${contact.email || 'djadam@thismagicmomentnj.com'}`,
+      value: contact.email || 'thismagicmomentllc@gmail.com',
+      href: `mailto:${contact.email || 'thismagicmomentllc@gmail.com'}`,
     },
     {
       icon: FiMapPin,

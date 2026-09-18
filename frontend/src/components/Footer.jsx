@@ -7,7 +7,7 @@ const Footer = ({ content }) => {
   const footer = content?.footer || {};
   const contact = content?.contact || {};
   const phone = contact.phone || '732-829-2344';
-  const email = contact.email || 'djadam@thismagicmomentnj.com';
+  const email = contact.email || 'thismagicmomentllc@gmail.com';
   const logoSrc = getLogoUrl(content?.logo?.imageUrl);
 
   return (

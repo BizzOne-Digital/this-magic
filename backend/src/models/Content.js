@@ -31,7 +31,7 @@ const contentSchema = new mongoose.Schema(
       imagePublicIds: [{ type: String }],
     },
     contact: {
-      email: { type: String, default: 'djadam@thismagicmomentnj.com' },
+      email: { type: String, default: 'thismagicmomentllc@gmail.com' },
       phone: { type: String, default: '732-829-2344' },
       website: { type: String, default: 'www.thismagicmomentnj.com' },
       address: { type: String, default: 'New Jersey & Tri-State Area' },

@@ -66,7 +66,7 @@ export const sendCustomerConfirmation = async (lead) => {
         Facebook: Adam Aronow
       </p>
       <p style="color: #666;">— The This Magic Moment Team<br>
-      📞 732-829-2344 | ✉️ djadam@thismagicmomentnj.com</p>
+      📞 732-829-2344 | ✉️ thismagicmomentllc@gmail.com</p>
     </div>
   `;
 
