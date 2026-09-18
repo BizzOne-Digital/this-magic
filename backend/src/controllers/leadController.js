@@ -8,12 +8,15 @@ export const createLead = async (req, res) => {
 
     try {
       await sendLeadNotification(lead);
+      console.log(`Lead notification email sent to admin for lead ${lead._id}`);
+
       const settings = await Settings.findOne();
       if (settings?.sendCustomerConfirmation !== false) {
         await sendCustomerConfirmation(lead);
+        console.log(`Confirmation email sent to ${lead.email} for lead ${lead._id}`);
       }
     } catch (emailError) {
-      console.error('Email error:', emailError.message);
+      console.error(`Email error for lead ${lead._id}:`, emailError.message);
     }
 
     res.status(201).json({ success: true, message: 'Thank you! We will contact you soon.', data: lead });
