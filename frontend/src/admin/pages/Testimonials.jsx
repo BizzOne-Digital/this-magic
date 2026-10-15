@@ -15,6 +15,9 @@ const emptyForm = {
   review: '',
   location: '',
   eventDate: '',
+  reviewDate: '',
+  sourceLabel: '',
+  sourceUrl: '',
   isActive: true,
   isFeatured: false,
   order: 0,
@@ -67,6 +70,9 @@ const Testimonials = () => {
       review: item.review,
       location: item.location || '',
       eventDate: item.eventDate ? item.eventDate.split('T')[0] : '',
+      reviewDate: item.reviewDate ? item.reviewDate.split('T')[0] : '',
+      sourceLabel: item.sourceLabel || '',
+      sourceUrl: item.sourceUrl || '',
       isActive: item.isActive,
       isFeatured: item.isFeatured,
       order: item.order || 0,
@@ -82,6 +88,7 @@ const Testimonials = () => {
     if (!form.clientName.trim()) newErrors.clientName = 'Client name is required';
     if (!form.eventType) newErrors.eventType = 'Event type is required';
     if (!form.review.trim()) newErrors.review = 'Review is required';
+    if (form.sourceUrl && !/^https?:\/\/[^\s]+$/i.test(form.sourceUrl)) newErrors.sourceUrl = 'Enter an HTTP or HTTPS review URL';
     if (form.rating < 1 || form.rating > 5) newErrors.rating = 'Rating must be 1-5';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -347,6 +354,20 @@ const Testimonials = () => {
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Review *</label>
                 <textarea value={form.review} onChange={(e) => setForm({ ...form, review: e.target.value })} rows={4} className={`admin-input resize-none ${errors.review ? 'border-red-500' : ''}`} />
               </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <label className="block text-sm font-medium text-gray-700">Review source
+                  <input value={form.sourceLabel} onChange={(e) => setForm({ ...form, sourceLabel: e.target.value })} placeholder="e.g. Client email or The Knot" className="admin-input mt-1.5" />
+                </label>
+                <label className="block text-sm font-medium text-gray-700">Original review date (if known)
+                  <input type="date" value={form.reviewDate} onChange={(e) => setForm({ ...form, reviewDate: e.target.value })} className="admin-input mt-1.5" />
+                </label>
+                <label className="block text-sm font-medium text-gray-700 sm:col-span-2">Original review permalink (if public)
+                  <input type="url" value={form.sourceUrl} onChange={(e) => setForm({ ...form, sourceUrl: e.target.value })} placeholder="https://..." className="admin-input mt-1.5" />
+                </label>
+              </div>
+
+              {errors.sourceUrl && <p className="text-sm text-red-500">{errors.sourceUrl}</p>}
 
               <ImageUpload
                 label="Client / Event Photo"

@@ -1,0 +1,650 @@
+{
+  "content": {
+    "hero": {
+      "headlineParts": {
+        "line1": "the vibe",
+        "line2": "the voice",
+        "line3": "the dj",
+        "scriptLine": "your event needs"
+      },
+      "headline": "The Vibe. The Voice. The DJ Your Event Needs.",
+      "subheading": "Weddings • Sweet 16s • Birthdays • Private Events • Photo Booth • Photography • Videography",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787253523/this-magic-moment/hero/hxyu51h4ppznvlz6nhjb.jpg",
+      "primaryCta": "Call or Text DJ Adam Today",
+      "secondaryCta": "732 829 2344",
+      "publicId": "this-magic-moment/hero/hxyu51h4ppznvlz6nhjb"
+    },
+    "about": {
+      "headline": "MAKING MOMENTS",
+      "scriptAccent": "Unforgettable",
+      "paragraphs": [
+        "DJ Adam is a professional DJ and event entertainer based in New Jersey, dedicated to creating celebrations that people remember for a lifetime. With 30+ years of experience entertaining at weddings, Sweet 16s, milestone birthdays, and premium private events across the Tri-State area, DJ Adam brings the perfect blend of energy, elegance, and expertise to every occasion.",
+        "What sets This Magic Moment apart is the personal touch. DJ Adam doesn't just show up and press play — he invests time understanding your vision, curating the perfect soundtrack, and orchestrating the flow of your event from the first note to the last dance. Whether you need a sophisticated wedding MC, a high-energy Sweet 16 host, or complete entertainment with photo booth, photography, and videography, DJ Adam delivers a seamless, stress-free experience.",
+        "From intimate gatherings to grand ballroom celebrations, professional-grade sound, dynamic lighting, and intuitive crowd-reading skills ensure your dance floor stays packed and your guests stay engaged. When you book This Magic Moment, you're partnering with a dedicated entertainment company that genuinely cares about making your event magical."
+      ],
+      "ctaLabel": "Learn More",
+      "imageUrls": [],
+      "imagePublicIds": []
+    },
+    "contact": {
+      "email": "thismagicmomentllc@gmail.com",
+      "phone": "732-829-2344",
+      "website": "www.thismagicmomentnj.com",
+      "address": "New Jersey & Tri-State Area",
+      "serviceArea": "Serving New Jersey, New York, Pennsylvania & Connecticut"
+    },
+    "social": {
+      "instagram": "this_magic_moment_nj",
+      "facebook": "Adam Aronow",
+      "instagramUrl": "https://instagram.com/this_magic_moment_nj",
+      "facebookUrl": "https://facebook.com"
+    },
+    "footer": {
+      "tagline": "Creating unforgettable celebrations across the Tri-State area.",
+      "copyright": "© 2026 This Magic Moment. All Rights Reserved."
+    },
+    "logo": {
+      "imageUrl": "",
+      "publicId": ""
+    },
+    "seo": {
+      "homeTitle": "This Magic Moment | Premium DJ & Event Entertainment | DJ Adam",
+      "homeDescription": "Professional DJ services for weddings, Sweet 16s, birthdays & private events in New Jersey. Photo booth, photography & videography available.",
+      "aboutTitle": "About DJ Adam | This Magic Moment DJ",
+      "aboutDescription": "Meet DJ Adam — a professional DJ and event entertainer dedicated to creating unforgettable moments across New Jersey.",
+      "testimonialsTitle": "Client Testimonials | This Magic Moment",
+      "testimonialsDescription": "Read what couples, families, and event planners say about This Magic Moment DJ services.",
+      "contactTitle": "Contact & Book Your Date | This Magic Moment",
+      "contactDescription": "Get a quote, check availability, and book DJ Adam for your next wedding, Sweet 16, or celebration."
+    },
+    "aboutPage": {
+      "heroTitle": "About DJ Adam",
+      "heroSubtitle": "The DJ Who Brings Energy, Elegance & Unforgettable Moments to Every Celebration",
+      "storyTitle": "My Story",
+      "storyContent": [
+        "Music has always been my passion. What started as mixing tracks for friends' parties evolved into a full-time calling — helping people celebrate life's most important moments with the perfect soundtrack. Based in New Jersey, I've had the privilege of entertaining at hundreds of weddings, Sweet 16s, corporate events, and private celebrations across the Tri-State area.",
+        "Every event is different, and that's what I love about this work. A wedding requires a completely different approach than a Sweet 16 or a corporate gala — and I've honed my skills to excel at all of them. I take pride in being more than a DJ. I'm your event partner, your MC, your timeline coordinator, and the person who makes sure your dance floor is the place everyone wants to be.",
+        "When I launched This Magic Moment, I wanted to create an entertainment company that couples and families could trust completely. No cookie-cutter playlists, no inexperienced operators, no surprises. Just professional, personalized entertainment that reflects your unique celebration and exceeds your expectations."
+      ],
+      "missionTitle": "My Mission",
+      "missionContent": "To create unforgettable celebrations by combining professional DJ expertise, personalized service, and genuine passion for making people happy. Every event is treated as if it were our own family's celebration — with meticulous preparation, flawless execution, and an energy that keeps guests talking long after the last song. It's your day, your way.",
+      "values": [
+        {
+          "title": "Personalized Service",
+          "description": "Every playlist, every announcement, every moment is tailored to your vision and your guests.",
+          "icon": "heart",
+          "_id": "6a87506f839ce763bb16f2b4"
+        },
+        {
+          "title": "Professional Excellence",
+          "description": "Premium sound equipment, backup systems, and years of experience at every event.",
+          "icon": "star",
+          "_id": "6a87506f839ce763bb16f2b5"
+        },
+        {
+          "title": "Seamless Coordination",
+          "description": "Working harmoniously with your planner, venue, and vendors for a stress-free experience.",
+          "icon": "check",
+          "_id": "6a87506f839ce763bb16f2b6"
+        },
+        {
+          "title": "Unmatched Energy",
+          "description": "Reading the room and adapting in real-time to keep your celebration at peak excitement.",
+          "icon": "zap",
+          "_id": "6a87506f839ce763bb16f2b7"
+        }
+      ],
+      "stats": [
+        {
+          "label": "Events DJ'd",
+          "value": "2500+",
+          "_id": "6a889c1f448255a69c8f9b7a"
+        },
+        {
+          "label": "Years Experience",
+          "value": "30+",
+          "_id": "6a889c1f448255a69c8f9b7b"
+        },
+        {
+          "label": "5-Star Reviews",
+          "value": "250+",
+          "_id": "6a889c1f448255a69c8f9b7c"
+        },
+        {
+          "label": "Tri-State Events",
+          "value": "1000+",
+          "_id": "6a889c1f448255a69c8f9b7d"
+        }
+      ],
+      "whyChooseUs": [
+        {
+          "title": "One-Stop Entertainment",
+          "description": "DJ, photo booth, photography, and videography — everything you need from one trusted entertainment company.",
+          "_id": "6a889c1f448255a69c8f9b7e"
+        },
+        {
+          "title": "Fully Insured & Licensed",
+          "description": "Complete peace of mind with full liability insurance and professional business credentials.",
+          "_id": "6a889c1f448255a69c8f9b7f"
+        },
+        {
+          "title": "Free Consultation",
+          "description": "Every booking starts with a complimentary consultation to understand your vision and answer all your questions.",
+          "_id": "6a889c1f448255a69c8f9b80"
+        },
+        {
+          "title": "Flexible Packages",
+          "description": "Customizable packages for every budget and event type — no hidden fees, no surprises.",
+          "_id": "6a889c1f448255a69c8f9b81"
+        },
+        {
+          "title": "Premium Equipment",
+          "description": "Professional-grade sound systems, wireless microphones, dynamic lighting, special effects, and photo booths.",
+          "_id": "6a889c1f448255a69c8f9b82"
+        },
+        {
+          "title": "Responsive Communication",
+          "description": "Quick responses and dedicated contact with DJ Adam from booking until the end of your event.",
+          "_id": "6a889c1f448255a69c8f9b83"
+        }
+      ],
+      "heroImageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787255376/this-magic-moment/about-page/qaci5beghwcvftpausmn.jpg",
+      "heroPublicId": "this-magic-moment/about-page/qaci5beghwcvftpausmn",
+      "storyImageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787255459/this-magic-moment/about-page/cbj9xzhrnymzcwuq9f5l.jpg",
+      "storyPublicId": "this-magic-moment/about-page/cbj9xzhrnymzcwuq9f5l"
+    },
+    "testimonialsPage": {
+      "heroTitle": "What Our Clients Say",
+      "heroSubtitle": "Real reviews from real celebrations across New Jersey and the Tri-State area",
+      "introText": "Nothing makes us happier than hearing from couples, families, and event planners who trusted This Magic Moment with their special day. Read what our clients have to say about their experience working with DJ Adam — and imagine what your celebration could be like."
+    },
+    "reviewLinks": {
+      "theKnot": "https://www.theknot.com/marketplace/this-magic-moment-north-brunswick-nj-513977",
+      "weddingWire": "https://www.weddingwire.com/biz/this-magic-moment-south-amboy/c6424f898c1680b5.html",
+      "google": "https://www.google.com/search?q=This+Magic+Moment+DJ+Adam+New+Jersey+reviews"
+    },
+    "contactPage": {
+      "heroTitle": "Let's Connect",
+      "heroSubtitle": "Ready to create magic? Tell us about your event and let's start planning something unforgettable.",
+      "formIntro": "Fill out the form below and Adam will personally respond within 24 hours to discuss your event, check availability, and provide a custom quote. Prefer to talk directly? Call or email anytime — we're here to help make your celebration extraordinary.",
+      "faqs": [
+        {
+          "question": "How far in advance should I book?",
+          "answer": "We recommend booking 6-12 months in advance for weddings and popular dates (Saturdays in spring/fall). Sweet 16s and birthday parties typically need 2-4 months notice. However, we occasionally have last-minute availability — always reach out!",
+          "_id": "6a889c1f448255a69c8f9b84"
+        },
+        {
+          "question": "What areas do you serve?",
+          "answer": "We primarily serve New Jersey but regularly travel throughout the Tri-State area including New York, Pennsylvania, and Connecticut. Travel fees may apply for events outside our primary service area.",
+          "_id": "6a889c1f448255a69c8f9b85"
+        },
+        {
+          "question": "Do you offer package discounts?",
+          "answer": "Yes! We offer bundled packages when you combine DJ services with photo booth, photography, or videography. Ask about our current promotions for additional savings.",
+          "_id": "6a889c1f448255a69c8f9b86"
+        },
+        {
+          "question": "What is included in your DJ packages?",
+          "answer": "All packages include professional sound equipment, wireless microphones, dance floor lighting, MC services, a custom playlist consultation, and unlimited communication leading up to your event.",
+          "_id": "6a889c1f448255a69c8f9b87"
+        },
+        {
+          "question": "Can we meet before booking?",
+          "answer": "Absolutely! We offer complimentary consultations — in person, over the phone, or via video call. We want to make sure we're the perfect fit for your celebration.",
+          "_id": "6a889c1f448255a69c8f9b88"
+        },
+        {
+          "question": "What happens if you're sick on our event day?",
+          "answer": "We have a network of equally qualified professional DJs who can step in if an emergency ever arises. In 25+ years, this has never been an issue — but your peace of mind is our priority.",
+          "_id": "6a889c1f448255a69c8f9b89"
+        }
+      ]
+    },
+    "videos": {
+      "items": [],
+      "scriptAccent": "Watch the Energy",
+      "subtitle": "Real event footage from weddings, Sweet 16s, and Bar & Bat Mitzvah celebrations across New Jersey.",
+      "title": "See The Magic In Action"
+    },
+    "_id": "6a87506f839ce763bb16f2b3",
+    "createdAt": "2026-08-20T19:07:27.977Z",
+    "updatedAt": "2026-08-21T18:42:39.507Z",
+    "__v": 5
+  },
+  "services": [
+    {
+      "_id": "6a87506f839ce763bb16f296",
+      "title": "Wedding DJ",
+      "slug": "wedding-dj",
+      "description": "Your wedding day deserves a DJ who understands that every moment matters — from the walk down the aisle to the last dance. DJ Adam creates a seamless flow of energy, emotion, and elegance, reading the room and keeping your dance floor packed all night long.",
+      "shortDescription": "Unforgettable celebrations tailored to your love story.",
+      "icon": "rings",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787254688/this-magic-moment/services/ibt3ufi0opeaojxwogrn.jpg",
+      "publicId": "this-magic-moment/services/ibt3ufi0opeaojxwogrn",
+      "ctaLabel": "Book Your Wedding",
+      "ctaLink": "/contact",
+      "features": [
+        "Custom playlist consultation",
+        "Professional MC services",
+        "Ceremony & reception coverage",
+        "Wireless microphone system",
+        "Dance floor lighting",
+        "Timeline coordination with vendors"
+      ],
+      "order": 1,
+      "isActive": true,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.460Z",
+      "updatedAt": "2026-08-21T18:42:39.636Z"
+    },
+    {
+      "_id": "6a87506f839ce763bb16f297",
+      "title": "Sweet 16 DJ",
+      "slug": "sweet-16-dj",
+      "description": "Sweet 16s are once-in-a-lifetime celebrations, and DJ Adam brings the perfect mix of high-energy hits, current trends, and crowd-pleasing classics to make your teen's party absolutely legendary.",
+      "shortDescription": "Epic parties. Lasting memories. Maximum energy.",
+      "icon": "crown",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787254700/this-magic-moment/services/sazzz8geoqtm7ketgutp.jpg",
+      "publicId": "this-magic-moment/services/sazzz8geoqtm7ketgutp",
+      "ctaLabel": "Plan Your Sweet 16",
+      "ctaLink": "/contact",
+      "features": [
+        "Grand entrance coordination",
+        "Candle ceremony music",
+        "Age-appropriate playlists",
+        "Interactive games & activities",
+        "Photo moment coordination",
+        "Parent-approved song lists"
+      ],
+      "order": 2,
+      "isActive": true,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.460Z",
+      "updatedAt": "2026-08-21T18:42:39.784Z"
+    },
+    {
+      "_id": "6a87506f839ce763bb16f298",
+      "title": "Birthday Parties",
+      "slug": "birthday-parties",
+      "description": "Whether it's a milestone 50th birthday bash, a kids' party, or an intimate gathering of close friends, DJ Adam adapts his style to match your celebration perfectly.",
+      "shortDescription": "Every age, every vibe, every celebration.",
+      "icon": "cake",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787254711/this-magic-moment/services/gt5dgljqaovab1s2dffu.jpg",
+      "publicId": "this-magic-moment/services/gt5dgljqaovab1s2dffu",
+      "ctaLabel": "Celebrate in Style",
+      "ctaLink": "/contact",
+      "features": [
+        "All ages welcome",
+        "Custom theme playlists",
+        "Interactive entertainment",
+        "Flexible packages",
+        "Indoor & outdoor setups",
+        "Special milestone coordination"
+      ],
+      "order": 3,
+      "isActive": true,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.461Z",
+      "updatedAt": "2026-08-21T18:42:39.892Z"
+    },
+    {
+      "_id": "6a87506f839ce763bb16f299",
+      "title": "Private Events",
+      "slug": "private-events",
+      "description": "From corporate holiday parties and charity galas to bar mitzvahs, anniversaries, and exclusive private gatherings, DJ Adam delivers polished, professional entertainment that elevates any occasion.",
+      "shortDescription": "Corporate galas, fundraisers, and exclusive celebrations.",
+      "icon": "star",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787254725/this-magic-moment/services/nx4277xpiht71t0dej9q.jpg",
+      "publicId": "this-magic-moment/services/nx4277xpiht71t0dej9q",
+      "ctaLabel": "Plan Your Event",
+      "ctaLink": "/contact",
+      "features": [
+        "Corporate event expertise",
+        "Fundraiser & gala experience",
+        "Bar/Bat Mitzvah celebrations",
+        "Anniversary parties",
+        "Holiday parties",
+        "Fully insured & professional"
+      ],
+      "order": 4,
+      "isActive": true,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.461Z",
+      "updatedAt": "2026-08-21T18:42:40.024Z"
+    },
+    {
+      "_id": "6a87506f839ce763bb16f29a",
+      "title": "Photo Booth",
+      "slug": "photo-booth",
+      "description": "Add an extra layer of fun to any event with our premium photo booth experience. Guests love the instant prints, custom scrapbook, USB with all images, and hilarious props that create lasting memories.",
+      "shortDescription": "Fun props. Instant smiles. Unlimited memories.",
+      "icon": "camera",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787254737/this-magic-moment/services/afopmuxtl1whv0buhmxm.jpg",
+      "publicId": "this-magic-moment/services/afopmuxtl1whv0buhmxm",
+      "ctaLabel": "Add Photo Booth",
+      "ctaLink": "/contact",
+      "features": [
+        "Premium props collection",
+        "Instant prints",
+        "Custom scrapbook",
+        "USB with all your images",
+        "Custom photo strip branding",
+        "Attendant included"
+      ],
+      "order": 5,
+      "isActive": true,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.461Z",
+      "updatedAt": "2026-08-21T18:42:40.135Z"
+    },
+    {
+      "_id": "6a87506f839ce763bb16f29b",
+      "title": "Photography",
+      "slug": "photography",
+      "description": "Professional event photography that captures the candid laughs, tearful toasts, and dance floor chaos that make your celebration unique. DJ Adam's photography team works seamlessly alongside DJ services.",
+      "shortDescription": "Capture every magic moment in stunning detail.",
+      "icon": "photo",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787254823/this-magic-moment/services/oe9m3dzirchwzlwwjean.jpg",
+      "publicId": "this-magic-moment/services/oe9m3dzirchwzlwwjean",
+      "ctaLabel": "Book Photography",
+      "ctaLink": "/contact",
+      "features": [
+        "Candid & posed coverage",
+        "Up to 10 hours of coverage",
+        "Professional editing available",
+        "USB with all your images",
+        "Engagement sessions available",
+        "Album design options"
+      ],
+      "order": 6,
+      "isActive": true,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.461Z",
+      "updatedAt": "2026-08-21T18:42:40.245Z"
+    },
+    {
+      "_id": "6a87506f839ce763bb16f29c",
+      "title": "Videography",
+      "slug": "videography",
+      "description": "Professional videography preserves the emotion, laughter, and magic of your celebration in motion. Perfect paired with DJ and photography for complete event coverage.",
+      "shortDescription": "Relive the magic with cinematic event films.",
+      "icon": "video",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787254835/this-magic-moment/services/kpebqhxwdqwzmttzlyuf.jpg",
+      "publicId": "this-magic-moment/services/kpebqhxwdqwzmttzlyuf",
+      "ctaLabel": "Book Videography",
+      "ctaLink": "/contact",
+      "features": [
+        "Cinematic event films",
+        "Full ceremony coverage",
+        "Up to 10 hours of coverage",
+        "Social media clips",
+        "Professional color grading"
+      ],
+      "order": 7,
+      "isActive": true,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.461Z",
+      "updatedAt": "2026-08-21T18:42:40.364Z"
+    }
+  ],
+  "testimonials": [
+    {
+      "_id": "6a8762da4df0e597bc1e5230",
+      "clientName": "Wedding Clients",
+      "eventType": "Wedding",
+      "rating": 5,
+      "review": "We hired Adam as our DJ more than a decade after he did my now-husband's Bar Mitzvah, and he knocked it out of the park! The music was great, our friends were dancing all night long, and he also played softer and slower music during the meal portions of the evening. The wedding videographer and photo booth add-ons were excellent as well! The videographer captured every second of the day, and there was always a line for the photo booth from the moment it opened to the very end of the night. We highly recommend giving DJ Adam a call or email about your upcoming wedding or other major event ASAP.",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787258189/this-magic-moment/testimonials/adfkhebtoodregkdbre6.jpg",
+      "publicId": "this-magic-moment/testimonials/adfkhebtoodregkdbre6",
+      "location": "New Jersey",
+      "isActive": true,
+      "isFeatured": true,
+      "isUserSubmitted": false,
+      "status": "Approved",
+      "order": 0,
+      "__v": 0,
+      "createdAt": "2026-08-20T20:26:02.908Z",
+      "updatedAt": "2026-08-20T20:36:26.974Z",
+      "sourceLabel": "Client feedback shared by email"
+    },
+    {
+      "_id": "6a8762da4df0e597bc1e5231",
+      "clientName": "Wedding Clients",
+      "eventType": "Wedding",
+      "rating": 5,
+      "review": "A HUGE thank you to DJ Adam, for a job so very well done for our wedding. Adam had so much positive energy, kept everything flowing beautifully, kept everybody engaged, moved the night along perfectly, had our dance floor going, placed all of our requested songs beautifully through the evening - it was such a magical night that Adam had a pivotal role in making happen. We will forever remain grateful! Thank you so much, Adam.",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787258177/this-magic-moment/testimonials/moncoiubwb0njb9zgadb.jpg",
+      "publicId": "this-magic-moment/testimonials/moncoiubwb0njb9zgadb",
+      "location": "New Jersey",
+      "isActive": true,
+      "isFeatured": true,
+      "isUserSubmitted": false,
+      "status": "Approved",
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-08-20T20:26:02.910Z",
+      "updatedAt": "2026-08-20T20:36:15.297Z",
+      "sourceLabel": "Client feedback shared by email"
+    },
+    {
+      "_id": "6a8762da4df0e597bc1e5232",
+      "clientName": "Gina & Tyler",
+      "eventType": "Wedding",
+      "rating": 5,
+      "review": "First off let me say, a lot of people say \"never go with your first choice\" well I'm glad I DIDN'T listen to them! DJ Adam was the first DJ I spoke to and I knew he was it for our wedding. He was so personable, loved our ideas and was a fantastic listener!! Any time I felt stressed throughout the planning process, if I texted him feeling anxious, he's calling me within minutes to talk it out with me.\r\n\r\nThe dance floor was packed the whole night, played all of our must plays, stayed away from our do not plays and opened up the most pit for me! I'm sure that was a first for everybody attending 😂\r\n\r\nHe was reasonably priced even with a Photo Booth package! The Photo Booth was PACKED all night! I got a physical copy of all the pictures taken in the booth as well as a usb with them all! He also printed a few 4x6 of my husband and I in the Photo Booth.\r\n\r\nI highly recommend the company, this DJ, their packages are amazing and I am so happy that I went with the first DJ I talked with.\r\n\r\nHe also gave us a card with a sweet message, and always posts on my Facebook for my birthday.\r\n\r\nThank you DJ Adam and This Magic Moment — Gina & Tyler",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787258278/this-magic-moment/testimonials/sg5zdootdzgozu4ixqvu.jpg",
+      "publicId": "this-magic-moment/testimonials/sg5zdootdzgozu4ixqvu",
+      "location": "New Jersey",
+      "isActive": true,
+      "isFeatured": true,
+      "isUserSubmitted": false,
+      "status": "Approved",
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-08-20T20:26:02.910Z",
+      "updatedAt": "2026-08-20T20:37:56.518Z",
+      "sourceLabel": "Client feedback shared by email"
+    },
+    {
+      "_id": "6a8762da4df0e597bc1e5233",
+      "clientName": "Bella",
+      "eventType": "Sweet 16",
+      "rating": 5,
+      "review": "DJ Adam was great at my Sweet Sixteen party. My friends danced all night. He played all of the music I requested. The photo booth was great too! I love the memory book he made for me. Thank you DJ Adam!",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787258309/this-magic-moment/testimonials/twtvneyv71lvjgcmvhen.jpg",
+      "publicId": "this-magic-moment/testimonials/twtvneyv71lvjgcmvhen",
+      "location": "New Jersey",
+      "isActive": true,
+      "isFeatured": true,
+      "isUserSubmitted": false,
+      "status": "Approved",
+      "order": 3,
+      "__v": 0,
+      "createdAt": "2026-08-20T20:26:02.910Z",
+      "updatedAt": "2026-08-20T20:38:27.231Z",
+      "sourceLabel": "Client feedback shared by email"
+    },
+    {
+      "_id": "6a8762da4df0e597bc1e5234",
+      "clientName": "Sweet 16 Client",
+      "eventType": "Sweet 16",
+      "rating": 5,
+      "review": "Adam DJ'd my sweet 16. He did an amazing job! I saw him a few times at other parties, and I've never seen a better DJ. He is so sweet, and interactive with the guests. Also loved the photo booth. It came with a personalized book to keep all my pics in, and little messages in it from my guests.",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787258222/this-magic-moment/testimonials/zum1zbluvrpdm1miodjf.jpg",
+      "publicId": "this-magic-moment/testimonials/zum1zbluvrpdm1miodjf",
+      "location": "New Jersey",
+      "isActive": true,
+      "isFeatured": false,
+      "isUserSubmitted": false,
+      "status": "Approved",
+      "order": 4,
+      "__v": 0,
+      "createdAt": "2026-08-20T20:26:02.910Z",
+      "updatedAt": "2026-08-20T20:37:00.029Z",
+      "sourceLabel": "Client feedback shared by email"
+    },
+    {
+      "_id": "6a8762da4df0e597bc1e5235",
+      "clientName": "Sweet 16 Family",
+      "eventType": "Sweet 16",
+      "rating": 5,
+      "review": "What an amazing time with DJ Adam for the 2nd time! He did our 1st daughter's Sweet 16, so there was no question who was doing our 2nd daughter's Sweet 16! He does an amazing job, listens to details, and makes the day fun, special, as well everything goes so smoothly! If you need a DJ, we highly recommend him!",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787258256/this-magic-moment/testimonials/yf9ogrfufc9nnllhbhls.jpg",
+      "publicId": "this-magic-moment/testimonials/yf9ogrfufc9nnllhbhls",
+      "location": "New Jersey",
+      "isActive": true,
+      "isFeatured": true,
+      "isUserSubmitted": false,
+      "status": "Approved",
+      "order": 5,
+      "__v": 0,
+      "createdAt": "2026-08-20T20:26:02.910Z",
+      "updatedAt": "2026-08-20T20:37:34.850Z",
+      "sourceLabel": "Client feedback shared by email"
+    }
+  ],
+  "promotions": [
+    {
+      "_id": "6a87506f839ce763bb16f2a7",
+      "title": "$500 OFF Weddings for 2026 & 2027",
+      "description": "Book your dream wedding DJ package for 2026 or 2027 and save $500! Limited availability — premium dates fill up fast.",
+      "badge": "Wedding Special",
+      "icon": "tag",
+      "discountAmount": "$500",
+      "terms": "Valid for new bookings only. Minimum 5-hour package required. Cannot be combined with other offers.",
+      "imageUrl": "",
+      "publicId": "",
+      "expiryDate": "2027-12-31T00:00:00.000Z",
+      "isActive": true,
+      "isFeatured": true,
+      "order": 1,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.737Z",
+      "updatedAt": "2026-08-20T19:07:27.737Z"
+    },
+    {
+      "_id": "6a87506f839ce763bb16f2a8",
+      "title": "$250 OFF All 4-Hour Events",
+      "description": "Save $250 on any event booking with a 4-hour minimum. Perfect for Sweet 16s, birthdays, anniversaries, and private celebrations.",
+      "badge": "Event Special",
+      "icon": "gift",
+      "discountAmount": "$250",
+      "terms": "4-hour minimum booking required. Valid for Sweet 16s, birthdays, private events, and corporate parties.",
+      "imageUrl": "",
+      "publicId": "",
+      "expiryDate": "2026-12-31T00:00:00.000Z",
+      "isActive": true,
+      "isFeatured": true,
+      "order": 2,
+      "__v": 0,
+      "createdAt": "2026-08-20T19:07:27.737Z",
+      "updatedAt": "2026-08-20T19:07:27.737Z"
+    }
+  ],
+  "gallery": [
+    {
+      "_id": "6a876b8c48d9b239b97669ec",
+      "title": "Ballroom dance floor",
+      "caption": "Guests dancing in a ballroom under blue uplighting",
+      "category": "General",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787259791/this-magic-moment/gallery/ztysgq0ypwnr0ipm9kwb.jpg",
+      "publicId": "this-magic-moment/gallery/ztysgq0ypwnr0ipm9kwb",
+      "order": 0,
+      "isActive": true,
+      "createdAt": "2026-08-20T21:03:08.821Z",
+      "updatedAt": "2026-08-20T21:03:08.821Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a876b8e48d9b239b97669ee",
+      "title": "Photo booth fun",
+      "caption": "Guests posing with props at a ring-light photo booth",
+      "category": "General",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787259792/this-magic-moment/gallery/sajwjar6ijdknpgzsxau.jpg",
+      "publicId": "this-magic-moment/gallery/sajwjar6ijdknpgzsxau",
+      "order": 1,
+      "isActive": true,
+      "createdAt": "2026-08-20T21:03:10.558Z",
+      "updatedAt": "2026-08-20T21:03:10.558Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a876b9048d9b239b97669f0",
+      "title": "Sweet 16 cake moment",
+      "caption": "Birthday guest beside a cake with number 16 candles",
+      "category": "General",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787259794/this-magic-moment/gallery/apsn3xwkwl9mvn67zjvy.jpg",
+      "publicId": "this-magic-moment/gallery/apsn3xwkwl9mvn67zjvy",
+      "order": 2,
+      "isActive": true,
+      "createdAt": "2026-08-20T21:03:12.434Z",
+      "updatedAt": "2026-08-20T21:03:12.434Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a876b9248d9b239b97669f2",
+      "title": "DJ and dance floor",
+      "caption": "DJ facing a crowded dance floor under blue stage lights",
+      "category": "General",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787259796/this-magic-moment/gallery/tz0j5zso4gektuccuu2v.jpg",
+      "publicId": "this-magic-moment/gallery/tz0j5zso4gektuccuu2v",
+      "order": 3,
+      "isActive": true,
+      "createdAt": "2026-08-20T21:03:14.137Z",
+      "updatedAt": "2026-08-20T21:03:14.137Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a876b9448d9b239b97669f4",
+      "title": "Wedding entrance",
+      "caption": "Wedding couple entering a ballroom with raised hands",
+      "category": "General",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787259798/this-magic-moment/gallery/ctpt0kwf7sel6xzvrcle.jpg",
+      "publicId": "this-magic-moment/gallery/ctpt0kwf7sel6xzvrcle",
+      "order": 4,
+      "isActive": true,
+      "createdAt": "2026-08-20T21:03:16.549Z",
+      "updatedAt": "2026-08-20T21:03:16.549Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a876b9748d9b239b97669f6",
+      "title": "Dance floor celebration",
+      "caption": "Party guests dancing beside DJ equipment and candlelit decor",
+      "category": "General",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787259801/this-magic-moment/gallery/bkitv9yno3ucojhqoukg.jpg",
+      "publicId": "this-magic-moment/gallery/bkitv9yno3ucojhqoukg",
+      "order": 5,
+      "isActive": true,
+      "createdAt": "2026-08-20T21:03:19.497Z",
+      "updatedAt": "2026-08-20T21:03:19.497Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a876b9948d9b239b97669f8",
+      "title": "Photo booth memories",
+      "caption": "Friends posing in novelty glasses at a photo booth",
+      "category": "General",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787259803/this-magic-moment/gallery/ld0oc7ojnckxq5gx5q3v.jpg",
+      "publicId": "this-magic-moment/gallery/ld0oc7ojnckxq5gx5q3v",
+      "order": 6,
+      "isActive": true,
+      "createdAt": "2026-08-20T21:03:21.599Z",
+      "updatedAt": "2026-08-20T21:03:21.599Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a876b9b48d9b239b97669fa",
+      "title": "Sweet 16 dancing",
+      "caption": "Guest in a blue ballgown dancing with friends",
+      "category": "General",
+      "imageUrl": "https://res.cloudinary.com/difmil8wj/image/upload/v1787259805/this-magic-moment/gallery/yw7wo3lrkejx64p0vvtk.jpg",
+      "publicId": "this-magic-moment/gallery/yw7wo3lrkejx64p0vvtk",
+      "order": 7,
+      "isActive": true,
+      "createdAt": "2026-08-20T21:03:23.337Z",
+      "updatedAt": "2026-08-20T21:03:23.337Z",
+      "__v": 0
+    }
+  ]
+}

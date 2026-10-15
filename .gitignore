@@ -6,3 +6,9 @@ dist/
 .vercel
 *.log
 .DS_Store
+
+# Temporary server bundle for static generation
+.prerender/
+
+# Local browser screenshots and Lighthouse reports
+seo-reports/

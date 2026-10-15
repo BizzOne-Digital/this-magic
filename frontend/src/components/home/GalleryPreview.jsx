@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 import SectionHeading from '../SectionHeading';
 import { SkeletonCard } from '../LoadingSpinner';
+import { getGalleryText } from '../../constants/gallery';
+import { responsiveImage } from '../../utils/images';
 
 const GalleryPreview = ({ gallery, loading }) => {
   const items = gallery.slice(0, 8);
 
   return (
-    <section className="section-padding bg-white">
+    <section id="event-gallery" className="section-padding bg-white scroll-mt-28">
       <div className="container-custom">
         <SectionHeading
           scriptAccent="Our Work"
@@ -23,7 +25,9 @@ const GalleryPreview = ({ gallery, loading }) => {
           </div>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-            {items.map((item, index) => (
+            {items.map((item, index) => {
+              const text = getGalleryText(item);
+              return (
               <figure
                 key={item._id}
                 className={`relative overflow-hidden rounded-xl group card-hover animate-fade-in ${
@@ -33,8 +37,12 @@ const GalleryPreview = ({ gallery, loading }) => {
               >
                 <div className={`${index === 0 ? 'aspect-square md:aspect-auto md:h-full min-h-[280px]' : 'aspect-square'}`}>
                   <img
-                    src={item.imageUrl}
-                    alt={item.title}
+                    {...responsiveImage(
+                      item.imageUrl,
+                      [400, 800],
+                      index === 0 ? '(min-width: 768px) 50vw, 50vw' : '(min-width: 768px) 25vw, 50vw'
+                    )}
+                    alt={text.alt}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading="lazy"
                   />
@@ -43,13 +51,11 @@ const GalleryPreview = ({ gallery, loading }) => {
                   <span className="text-teal text-xs font-bold uppercase tracking-wider mb-1">
                     {item.category}
                   </span>
-                  <h3 className="text-white font-bold text-sm md:text-base">{item.title}</h3>
-                  {item.caption && (
-                    <p className="text-gray-300 text-xs mt-1 line-clamp-2">{item.caption}</p>
-                  )}
+                  <span className="text-white font-bold text-sm md:text-base">{text.caption}</span>
                 </figcaption>
               </figure>
-            ))}
+              );
+            })}
           </div>
         )}
 

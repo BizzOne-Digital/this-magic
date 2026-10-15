@@ -478,6 +478,11 @@ const Content = () => {
         {activeTab === 'seo' && (
           <div className="space-y-6">
             <h2 className="text-lg font-semibold text-navy">SEO Settings</h2>
+            <p className="text-sm text-gray-600 bg-amber-50 border border-amber-200 rounded-lg p-3">
+              Reference only. Live page titles, descriptions and canonicals are set in the website code
+              (frontend/src/constants/seo.js) so search engines receive them in the initial page HTML.
+              Ask the developer to change them there.
+            </p>
             {[
               { prefix: 'home', label: 'Home Page' },
               { prefix: 'about', label: 'About Page' },

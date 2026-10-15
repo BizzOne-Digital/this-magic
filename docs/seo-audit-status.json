@@ -1,0 +1,56 @@
+{
+  "audit": {
+    "document": "This-Magic-Moment-On-Page-SEO-Audit.pdf",
+    "pages_read": 22,
+    "implementation_date": "2026-10-16",
+    "scope": "All five current public pages, all eight audited legacy URLs, shared components and crawl resources"
+  },
+  "findings": [
+    { "id": "F01", "status": "implemented", "result": "Services has exactly one self-canonical and matching og:url in initial HTML and after browser navigation." },
+    { "id": "F02", "status": "implemented", "result": "Three homepage/service/offer aliases have permanent HTTP redirects. The party-DJ hub and all four topic-specific articles are restored at the audited URLs with complete content, self-canonicals, internal links and sitemap entries. Unknown URLs use a real 404 instead of a homepage SPA fallback." },
+    { "id": "F03", "status": "implemented", "result": "The XML sitemap is generated from the ten actual public pages. Admin pages, redirects, fragments and removed URLs are excluded." },
+    { "id": "F04", "status": "implemented", "result": "Plain-text robots.txt allows crawling and advertises the canonical sitemap. llms.txt is also real plain text." },
+    { "id": "F05", "status": "implemented", "result": "The homepage uses the audit's NJ service title with the brand once. All five existing pages use the proposed titles, descriptions and descriptive H1s." },
+    { "id": "F06", "status": "implemented", "result": "All eight scene-specific captions and alt descriptions match the PDF. Gallery captions use figcaption. The CMS API serializes legacy IDs as descriptions, the frontend normalizes old API responses, and an optional idempotent storage migration is available without reseeding data." },
+    { "id": "F07", "status": "implemented", "result": "The local 1200x630 social image has explicit Open Graph and Twitter image, dimensions and descriptive alt tags in the initial HTML." },
+    { "id": "F08", "status": "implemented", "result": "The 2099242-byte portrait is delivered as responsive WebP variants of 33212, 56540 and 90738 bytes. Existing CMS images have measured intrinsic dimensions and responsive Cloudinary sources. Heroes stay eager, below-fold photos stay lazy. Fonts are self-hosted and oversized stock backgrounds are replaced with existing optimized event media." },
+    { "id": "F09", "status": "implemented", "result": "Admin routes receive source noindex and X-Robots-Tag. The customer footer no longer links to the admin login. Existing authentication stays in place." },
+    { "id": "F10", "status": "implemented", "result": "Footer and contact omit Facebook unless a genuine profile path is configured; the platform-root placeholder is removed." },
+    { "id": "F11", "status": "implemented", "result": "Service shortcut labels use ordinary text. Actual service subsections retain H3 headings after H2 section headings." }
+  ],
+  "opportunities": [
+    { "id": "O01", "status": "implemented", "result": "Complete public React pages are rendered at build time from an approved public CMS snapshot. Browser hydration preserves that HTML; independent API refreshes keep content available during API outages. Production builds refresh the snapshot from VITE_API_URL or PUBLIC_CONTENT_API_URL when configured." },
+    { "id": "O02", "status": "implemented_with_verified_facts", "result": "Organization and WebSite JSON-LD use the public name, phone, preferred email, service states and existing Instagram profile. Articles identify the organization as author/publisher. No private address, operating town, legal surname, hours or unverified credentials have been invented." },
+    { "id": "O03", "status": "implemented", "result": "All five existing routes use the PDF's page-specific metadata and H1s. Creative slogans remain supporting text." },
+    { "id": "O04", "status": "implemented", "result": "All seven services have distinct planning guidance. About includes a planning process, service links and existing client examples. The home About CTA, testimonial service links, event gallery links and inquiry anchor are contextual. The restored guides are linked from services and a footer-accessible hub. Speculative town pages and optional duplicate service landing pages were not created." },
+    { "id": "O05", "status": "implemented_with_available_provenance", "result": "Known email feedback is labeled accurately; direct website submissions are labeled separately. Review source label, original permalink and review date can be edited in the CMS. Unknown dates/permalinks remain blank. Featured reviews are not repeated in the default list. Unverified platform review totals are removed; experience figures are labeled company-reported. No self-serving AggregateRating schema is published." }
+  ],
+  "legacy_urls": [
+    { "path": "/djservices", "outcome": "308 /services" },
+    { "path": "/affordable-dj-nj-special-savings/", "outcome": "308 /#offers; the section remains available even when no active offer exists" },
+    { "path": "/index.html", "outcome": "308 /" },
+    { "path": "/blog/categories/party-dj", "outcome": "200 restored planning guide hub" },
+    { "path": "/post/wedding-entertainment-emergencies-backup-plans", "outcome": "200 updated wedding backup-planning guide" },
+    { "path": "/post/stress-free-bar-mitzvah-dj-booking-in-new-jersey", "outcome": "200 Bar Mitzvah booking guide" },
+    { "path": "/post/music-selection-guidelines-for-bat-mitzvah-celebration", "outcome": "200 Bat Mitzvah music guide" },
+    { "path": "/post/music-trends-that-make-sweet-16-parties-memorable", "outcome": "200 updated Sweet 16 music guide" }
+  ],
+  "verification_commands": {
+    "production_build_and_static_acceptance": "cd frontend && npm run build",
+    "browser_desktop_and_mobile": "cd frontend && npm run test:browser",
+    "backend_schemas_and_serialization": "cd backend && npm run test:seo",
+    "five_page_mobile_and_desktop_lighthouse": "cd frontend && npm run check:performance",
+    "production_lighthouse": "Set SEO_BASE_URL=https://www.thismagicmomentnj.com before npm run check:performance",
+    "browser_requirement": "An installed Chrome/Edge on Windows, or CHROME_PATH; otherwise install Playwright Chromium",
+    "local_artifacts": "frontend/seo-reports contains browser results, screenshots and detailed Lighthouse JSON. These generated artifacts are gitignored."
+  },
+  "owner_follow_up": [
+    "Search Console: submit the sitemap, request recrawls, inspect Google-selected canonicals and monitor clicks, impressions and legacy 404s. No owner account was supplied.",
+    "Confirm a public operating town only if the client wants it published. No private home or invented office address is required.",
+    "Supply individual review permalinks and actual review/event dates when available; populate the added CMS fields without implying third-party verification for email feedback.",
+    "Confirm any exact booth footprint, package inclusions, photography/video deliverables and turnaround in each booking agreement. No unverified delivery times were added.",
+    "Reconcile historical URLs against an old CMS export, previous sitemap or Search Console export. Only the eight PDF URLs were available.",
+    "Live inquiry email delivery and public review submission require a separate authorized validation. Browser form checks intercept the API and do not create production leads or send messages.",
+    "Field Core Web Vitals and indexing outcomes require real user data and owner tools. Lighthouse lab scores are not ranking or field-performance guarantees."
+  ]
+}

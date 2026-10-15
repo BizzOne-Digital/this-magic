@@ -8,9 +8,9 @@ const ReviewLinks = ({ links, className = '' }) => {
   };
 
   const items = [
-    { label: 'The Knot', href: reviewLinks.theKnot, sub: '300+ reviews' },
-    { label: 'WeddingWire', href: reviewLinks.weddingWire, sub: '147+ reviews' },
-    { label: 'Google', href: reviewLinks.google, sub: 'Read our Google reviews' },
+    { label: 'The Knot', href: reviewLinks.theKnot, sub: 'Browse reviews on The Knot' },
+    { label: 'WeddingWire', href: reviewLinks.weddingWire, sub: 'Browse reviews on WeddingWire' },
+    { label: 'Google', href: reviewLinks.google, sub: 'Search Google for reviews' },
   ];
 
   return (

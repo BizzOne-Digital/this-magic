@@ -1,6 +1,8 @@
 import { FiArrowDown } from 'react-icons/fi';
 import Button from '../Button';
 import { PHONE_DISPLAY, PHONE_TEL } from '../../constants/site';
+import { PAGE_SEO } from '../../constants/seo';
+import { responsiveImage } from '../../utils/images';
 
 const HeroSection = ({ content }) => {
   const hero = content?.hero || {};
@@ -12,8 +14,17 @@ const HeroSection = ({ content }) => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src={hero.imageUrl || '/hero.png'}
+          {...(hero.imageUrl
+            ? responsiveImage(hero.imageUrl, [960, 1440, 1920])
+            : {
+                src: '/images/hero-1672.webp',
+                srcSet: '/images/hero-960.webp 960w, /images/hero-1672.webp 1672w',
+                sizes: '100vw',
+                width: 1672,
+                height: 941,
+              })}
           alt="DJ performing at a premium event"
+          fetchPriority="high"
           className="w-full h-full object-cover"
           loading="eager"
         />
@@ -22,7 +33,10 @@ const HeroSection = ({ content }) => {
       </div>
 
       <div className="relative z-10 container-custom text-center px-4 pt-24 pb-16">
-        <h1 className="text-white mb-6 animate-slide-up">
+        <h1 className="text-teal font-bold uppercase tracking-[0.25em] text-xs sm:text-sm md:text-base mb-6 animate-fade-in">
+          {PAGE_SEO.home.h1}
+        </h1>
+        <p className="text-white mb-6 animate-slide-up">
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none">
             {parts.line1 || 'the vibe'}
           </span>
@@ -35,7 +49,7 @@ const HeroSection = ({ content }) => {
           <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight leading-none mt-4">
             {parts.scriptLine || 'your event needs'}
           </span>
-        </h1>
+        </p>
 
         <p className="text-white text-base md:text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed animate-fade-in">
           {hero.subheading ||

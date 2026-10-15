@@ -33,6 +33,8 @@ const Header = ({ logoUrl }) => {
             <img
               src={logoSrc}
               alt="This Magic Moment — DJ Adam"
+              width="405"
+              height="184"
               className="h-14 sm:h-16 md:h-[4.5rem] w-auto max-w-[200px] sm:max-w-[240px] md:max-w-[280px] object-contain"
               onError={() => setLogoSrc(LOGO_PATH)}
             />

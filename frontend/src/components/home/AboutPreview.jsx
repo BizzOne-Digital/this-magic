@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import Button from '../Button';
 import SectionHeading from '../SectionHeading';
+import { DJ_PORTRAIT, responsiveImage } from '../../utils/images';
 
-const DJ_PHOTO = '/public1.png';
-const collageImages = ['/img1.png', '/img2.png', '/img3.png', '/img4.png'];
+const DJ_PHOTO = DJ_PORTRAIT.src;
+const collageImages = ['/images/event-1-800.webp', '/images/event-2-800.webp', '/images/event-3-800.webp', '/images/event-4-800.webp'];
 
 const AboutImage = ({ src, alt, className }) => {
   const [imgSrc, setImgSrc] = useState(src);
@@ -14,7 +15,8 @@ const AboutImage = ({ src, alt, className }) => {
 
   return (
     <img
-      src={imgSrc}
+      {...(imgSrc === DJ_PORTRAIT.src ? DJ_PORTRAIT : responsiveImage(imgSrc))}
+      sizes="(min-width: 1024px) 50vw, 100vw"
       alt={alt}
       className={className}
       loading="lazy"
@@ -79,7 +81,7 @@ const AboutPreview = ({ content }) => {
             <div className="mt-8 grid grid-cols-2 gap-4">
               {[
                 { label: "Events DJ'd", value: '2500+' },
-                { label: '5-Star Reviews', value: '250+' },
+                { label: 'Client Testimonials', value: 'Read Our' },
               ].map((stat) => (
                 <div key={stat.label} className="bg-navy/5 rounded-xl p-4 text-center">
                   <p className="text-2xl font-black text-teal">{stat.value}</p>
@@ -91,7 +93,7 @@ const AboutPreview = ({ content }) => {
             </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button to="/about">{about.ctaLabel || 'Learn More'}</Button>
+              <Button to="/about">Meet DJ Adam</Button>
               <Button to="/contact" variant="secondary">
                 Book a Consultation
               </Button>

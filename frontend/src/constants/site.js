@@ -21,3 +21,14 @@ export const WEDDING_DEMO = {
   description:
     'Watch DJ Adam in action at a real wedding — packed dance floor, seamless transitions, and the perfect mix of romance and celebration.',
 };
+
+// Only return a Facebook URL that points to an actual profile/page, never the platform root.
+export const getFacebookProfileUrl = (url) => {
+  if (!url) return null;
+  try {
+    const { hostname, pathname } = new URL(url);
+    return /(^|\.)facebook\.com$/.test(hostname) && pathname.replace(/\/+$/, '') ? url : null;
+  } catch {
+    return null;
+  }
+};

@@ -15,6 +15,9 @@ import { PageLoader } from '../components/LoadingSpinner';
 import SectionHeading from '../components/SectionHeading';
 import ContactForm from '../components/ContactForm';
 import Button from '../components/Button';
+import { getFacebookProfileUrl } from '../constants/site';
+import { PAGE_SEO } from '../constants/seo';
+import { responsiveImage } from '../utils/images';
 
 const FAQItem = ({ question, answer, isOpen, onToggle }) => (
   <div className="border border-gray-200 rounded-xl overflow-hidden animate-fade-in">
@@ -30,11 +33,9 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => (
         <FiChevronDown className="text-teal text-xl flex-shrink-0" />
       )}
     </button>
-    {isOpen && (
-      <div className="px-5 md:px-6 pb-5 md:pb-6 bg-gray-50 animate-slide-up">
-        <p className="text-gray-600 leading-relaxed">{answer}</p>
-      </div>
-    )}
+    <div hidden={!isOpen} className="px-5 md:px-6 pb-5 md:pb-6 bg-gray-50">
+      <p className="text-gray-600 leading-relaxed">{answer}</p>
+    </div>
   </div>
 );
 
@@ -47,6 +48,7 @@ const Contact = () => {
   const contactPage = content.contactPage || {};
   const contact = content.contact || {};
   const social = content.social || {};
+  const facebookUrl = getFacebookProfileUrl(social.facebookUrl);
   const faqs = contactPage.faqs?.length
     ? contactPage.faqs
     : [
@@ -90,27 +92,25 @@ const Contact = () => {
 
   return (
     <>
-      <SEO
-        title={content.seo?.contactTitle?.split('|')[0]?.trim() || 'Contact'}
-        description={content.seo?.contactDescription}
-        url="https://www.thismagicmomentnj.com/contact"
-      />
+      <SEO page="contact" />
 
       {/* Hero */}
       <section className="relative min-h-[45vh] flex items-center bg-navy overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <img
-            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=80"
-            alt="Event celebration contact"
+            {...responsiveImage('/images/hero-1672.webp')}
+            alt="Guests celebrating on a dance floor"
             className="w-full h-full object-cover"
             loading="eager"
           />
         </div>
         <div className="absolute inset-0 bg-navy/90" />
         <div className="relative z-10 container-custom text-center px-4 pt-28 pb-12 animate-slide-up">
-          <p className="heading-script text-2xl md:text-3xl mb-3">Get In Touch</p>
-          <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
+          <p className="heading-script text-2xl md:text-3xl mb-3">
             {contactPage.heroTitle || "Let's Connect"}
+          </p>
+          <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
+            {PAGE_SEO.contact.h1}
           </h1>
           <p className="text-white text-lg max-w-2xl mx-auto leading-relaxed">
             {contactPage.heroSubtitle ||
@@ -169,15 +169,17 @@ const Contact = () => {
                   >
                     <FaInstagram />
                   </a>
-                  <a
-                    href={social.facebookUrl || 'https://facebook.com'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full bg-navy flex items-center justify-center text-white hover:bg-teal hover:text-navy transition-all"
-                    aria-label="Facebook"
-                  >
-                    <FaFacebookF />
-                  </a>
+                  {facebookUrl && (
+                    <a
+                      href={facebookUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 rounded-full bg-navy flex items-center justify-center text-white hover:bg-teal hover:text-navy transition-all"
+                      aria-label="Facebook"
+                    >
+                      <FaFacebookF />
+                    </a>
+                  )}
                 </div>
               </div>
 
@@ -194,7 +196,7 @@ const Contact = () => {
             </div>
 
             {/* Right: Form */}
-            <div className="lg:col-span-3 animate-slide-up">
+            <div id="event-inquiry" className="lg:col-span-3 animate-slide-up scroll-mt-28">
               <ContactForm intro={contactPage.formIntro} />
             </div>
           </div>
@@ -277,7 +279,7 @@ const Contact = () => {
                 Sweet 16s, corporate events, and private celebrations. Contact us with your venue details
                 and we&apos;ll confirm availability and any applicable travel arrangements.
               </p>
-              <Button to="/contact" variant="primary">Check Your Date</Button>
+              <Button to="/contact#event-inquiry" variant="primary">Check Your Date</Button>
             </div>
           </div>
         </div>

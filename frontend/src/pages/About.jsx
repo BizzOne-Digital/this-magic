@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext } from 'react-router-dom';
 import {
   FaHeart,
   FaStar,
@@ -15,7 +14,9 @@ import SEO from '../components/SEO';
 import { PageLoader } from '../components/LoadingSpinner';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
-import { servicesAPI } from '../services/api';
+import { usePublicData } from '../context/PublicDataContext';
+import { PAGE_SEO } from '../constants/seo';
+import { DJ_PORTRAIT, responsiveImage } from '../utils/images';
 
 const valueIconMap = {
   heart: FaHeart,
@@ -28,14 +29,7 @@ const whyIcons = [FaShieldAlt, FaHandshake, FaComments, FaMusic, FaStar, FaCheck
 
 const About = () => {
   const { content } = useOutletContext();
-  const [services, setServices] = useState([]);
-
-  useEffect(() => {
-    servicesAPI
-      .getAll()
-      .then((res) => setServices(res.data.data || []))
-      .catch(console.error);
-  }, []);
+  const { services } = usePublicData();
 
   if (!content) return <PageLoader />;
 
@@ -55,11 +49,10 @@ const About = () => {
       ];
 
   const stats = aboutPage.stats?.length
-    ? aboutPage.stats
+    ? aboutPage.stats.filter((stat) => !/review/i.test(stat.label))
     : [
         { label: 'Events DJ\'d', value: '2500+' },
         { label: 'Years Experience', value: '30+' },
-        { label: '5-Star Reviews', value: '250+' },
         { label: 'Tri-State Events', value: '1000+' },
       ];
 
@@ -85,30 +78,23 @@ const About = () => {
 
   return (
     <>
-      <SEO
-        title={content.seo?.aboutTitle?.split('|')[0]?.trim() || 'About'}
-        description={content.seo?.aboutDescription}
-        url="https://www.thismagicmomentnj.com/about"
-      />
+      <SEO page="about" />
 
       {/* Hero Banner */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src={
-              aboutPage.heroImageUrl ||
-              'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=1920&q=80'
-            }
-            alt="DJ Adam at event"
+            {...responsiveImage(aboutPage.heroImageUrl || '/images/event-1-800.webp', [800, 1280, 1920])}
+            alt="Guests at a celebration"
             className="w-full h-full object-cover"
             loading="eager"
           />
           <div className="absolute inset-0 bg-navy/80" />
         </div>
         <div className="relative z-10 container-custom text-center px-4 pt-28 pb-16 animate-slide-up">
-          <p className="heading-script text-2xl md:text-3xl mb-3">Meet Your DJ</p>
+          <p className="heading-script text-2xl md:text-3xl mb-3">{aboutPage.heroTitle || 'About DJ Adam'}</p>
           <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
-            {aboutPage.heroTitle || 'About DJ Adam'}
+            {PAGE_SEO.about.h1}
           </h1>
           <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
             {aboutPage.heroSubtitle ||
@@ -124,7 +110,11 @@ const About = () => {
             <div className="animate-fade-in">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <img
-                  src="/public1.png"
+                  src={DJ_PORTRAIT.src}
+                  srcSet={DJ_PORTRAIT.srcSet}
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  width={DJ_PORTRAIT.width}
+                  height={DJ_PORTRAIT.height}
                   alt="DJ Adam professional photo"
                   className="w-full h-[400px] md:h-[500px] object-cover object-top"
                   loading="lazy"
@@ -145,6 +135,18 @@ const About = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-gray-50">
+        <div className="container-custom max-w-4xl">
+          <SectionHeading title="How to Plan Your Event with DJ Adam" />
+          <ol className="space-y-5 text-gray-600 leading-relaxed list-decimal pl-6">
+            <li><strong className="text-navy">Start with your date and venue.</strong> Share your event type, guest mix and the coverage you need during a consultation.</li>
+            <li><strong className="text-navy">Shape the music and timeline.</strong> Discuss must-play and do-not-play songs, announcements and the moments you want to coordinate with your venue and other vendors.</li>
+            <li><strong className="text-navy">Confirm the details together.</strong> Review your selected services and event arrangements in your booking agreement, then share the final timeline and contacts.</li>
+          </ol>
+          <p className="mt-6 text-gray-600">For a real client perspective, <Link to="/testimonials" className="text-teal underline">read Gina & Tyler?s wedding feedback and the Sweet 16 client stories</Link>. <Link to="/contact#event-inquiry" className="text-teal underline">Send your event details to begin.</Link></p>
         </div>
       </section>
 
@@ -184,6 +186,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <p className="bg-teal text-center text-navy/80 text-sm px-4 pb-8">Experience figures are company-reported. <Link to="/testimonials" className="underline font-semibold">Read client feedback and visit the independent review platforms.</Link></p>
 
       {/* Values Cards */}
       <section className="section-padding bg-white">
@@ -254,14 +258,15 @@ const About = () => {
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.slice(0, 6).map((service, index) => (
-              <div
+              <Link
                 key={service._id}
+                to={`/services#${service.slug}`}
                 className="flex gap-4 p-5 rounded-xl border border-gray-100 hover:border-teal/30 hover:shadow-lg transition-all animate-fade-in"
                 style={{ animationDelay: `${index * 60}ms` }}
               >
                 {service.imageUrl && (
                   <img
-                    src={service.imageUrl}
+                    {...responsiveImage(service.imageUrl, [160, 240], '80px')}
                     alt={service.title}
                     className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
                     loading="lazy"
@@ -278,7 +283,7 @@ const About = () => {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

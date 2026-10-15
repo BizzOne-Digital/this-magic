@@ -16,7 +16,7 @@ const contentSchema = new mongoose.Schema(
       },
       imageUrl: {
         type: String,
-        default: 'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=1920&q=80',
+        default: '/images/event-1-800.webp',
       },
       publicId: { type: String, default: '' },
       primaryCta: { type: String, default: 'Call or Text DJ Adam Today' },
@@ -41,7 +41,7 @@ const contentSchema = new mongoose.Schema(
       instagram: { type: String, default: 'this_magic_moment_nj' },
       facebook: { type: String, default: 'Adam Aronow' },
       instagramUrl: { type: String, default: 'https://instagram.com/this_magic_moment_nj' },
-      facebookUrl: { type: String, default: 'https://facebook.com' },
+      facebookUrl: { type: String, default: '' },
     },
     footer: {
       tagline: { type: String, default: 'Creating unforgettable celebrations across the Tri-State area.' },
@@ -52,25 +52,27 @@ const contentSchema = new mongoose.Schema(
       publicId: { type: String, default: '' },
     },
     seo: {
-      homeTitle: { type: String, default: 'This Magic Moment | Premium DJ & Event Entertainment | DJ Adam' },
+      // Display copy only: live page metadata comes from frontend/src/constants/seo.js
+      // so the prerendered HTML and rendered page always match.
+      homeTitle: { type: String, default: 'New Jersey DJ & Event Entertainment | This Magic Moment' },
       homeDescription: {
         type: String,
-        default: 'Professional DJ services for weddings, Sweet 16s, birthdays & private events in New Jersey. Photo booth, photography & videography available.',
+        default: 'Plan your New Jersey wedding, Sweet 16 or private event with DJ Adam. Explore DJ, photo booth, photography and video options. Request a custom quote.',
       },
-      aboutTitle: { type: String, default: 'About DJ Adam | This Magic Moment DJ' },
+      aboutTitle: { type: String, default: 'DJ Adam, New Jersey Event DJ | This Magic Moment' },
       aboutDescription: {
         type: String,
-        default: 'Meet DJ Adam — a professional DJ and event entertainer dedicated to creating unforgettable moments across New Jersey.',
+        default: 'Meet DJ Adam, the New Jersey DJ behind This Magic Moment. Learn about his approach to weddings, Sweet 16s and private events, and book a free consultation.',
       },
-      testimonialsTitle: { type: String, default: 'Client Testimonials | This Magic Moment' },
+      testimonialsTitle: { type: String, default: 'New Jersey DJ Reviews | This Magic Moment' },
       testimonialsDescription: {
         type: String,
-        default: 'Read what couples, families, and event planners say about This Magic Moment DJ services.',
+        default: 'Read reviews of DJ Adam and This Magic Moment from New Jersey weddings, Sweet 16s and other celebrations. Explore client stories and plan your event.',
       },
-      contactTitle: { type: String, default: 'Contact & Book Your Date | This Magic Moment' },
+      contactTitle: { type: String, default: 'Contact DJ Adam in New Jersey | This Magic Moment' },
       contactDescription: {
         type: String,
-        default: 'Get a quote, check availability, and book DJ Adam for your next wedding, Sweet 16, or celebration.',
+        default: 'Contact DJ Adam to check your event date and request a custom quote for DJ, photo booth, photography or videography in New Jersey and surrounding areas.',
       },
     },
     aboutPage: {

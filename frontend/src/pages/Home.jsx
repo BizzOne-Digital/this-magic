@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { HiOutlineSpeakerWave } from 'react-icons/hi2';
 import SEO from '../components/SEO';
@@ -12,51 +11,18 @@ import TestimonialsPreview from '../components/home/TestimonialsPreview';
 import GalleryPreview from '../components/home/GalleryPreview';
 import VideoShowcase from '../components/home/VideoShowcase';
 import { PHONE_DISPLAY, PHONE_TEL } from '../constants/site';
-import {
-  servicesAPI,
-  testimonialsAPI,
-  promotionsAPI,
-  galleryAPI,
-} from '../services/api';
+import { usePublicData } from '../context/PublicDataContext';
 
 const Home = () => {
   const { content } = useOutletContext();
-  const [services, setServices] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-  const [promotions, setPromotions] = useState([]);
-  const [gallery, setGallery] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [servicesRes, testimonialsRes, promotionsRes, galleryRes] = await Promise.all([
-          servicesAPI.getAll(),
-          testimonialsAPI.getAll(),
-          promotionsAPI.getAll(),
-          galleryAPI.getAll({ limit: 8 }),
-        ]);
-        setServices(servicesRes.data.data || []);
-        setTestimonials(testimonialsRes.data.data || []);
-        setPromotions(promotionsRes.data.data || []);
-        setGallery(galleryRes.data.data || []);
-      } catch (err) {
-        console.error('Home page fetch error:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
-  }, []);
+  const { services, testimonials, promotions, gallery } = usePublicData();
+  const loading = false;
 
   if (!content) return <PageLoader />;
 
   return (
     <>
-      <SEO
-        title={content.seo?.homeTitle?.split('|')[0]?.trim()}
-        description={content.seo?.homeDescription}
-      />
+      <SEO page="home" />
 
       <HeroSection content={content} />
 

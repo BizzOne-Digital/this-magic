@@ -10,7 +10,9 @@
     "seed": "node src/utils/seed.js",
     "sync-testimonials": "node src/utils/syncRealTestimonials.js",
     "update-content": "node src/utils/updateClientFeedback.js",
-    "add-testimonial": "node src/utils/addClientTestimonial.js"
+    "add-testimonial": "node src/utils/addClientTestimonial.js",
+    "fix-gallery-text": "node src/utils/fixGalleryText.js",
+    "test:seo": "node --test test/seo.test.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

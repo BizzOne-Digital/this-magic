@@ -142,7 +142,7 @@ const SubmitTestimonialForm = () => {
             </label>
             <div className="flex flex-col sm:flex-row gap-4 items-start">
               {preview && (
-                <img src={preview} alt="Preview" className="w-32 h-32 rounded-xl object-contain bg-gray-100 border" />
+                <img src={preview} alt="Preview" width="128" height="128" className="w-32 h-32 rounded-xl object-contain bg-gray-100 border" />
               )}
               <button
                 type="button"

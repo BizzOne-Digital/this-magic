@@ -1,15 +1,10 @@
-import { useState, useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { contentAPI } from '../services/api';
+import { usePublicData } from '../context/PublicDataContext';
 
 const MainLayout = () => {
-  const [content, setContent] = useState(null);
-
-  useEffect(() => {
-    contentAPI.get().then((res) => setContent(res.data.data)).catch(console.error);
-  }, []);
+  const { content } = usePublicData();
 
   return (
     <div className="min-h-screen flex flex-col">

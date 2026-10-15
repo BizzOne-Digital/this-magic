@@ -1,47 +1,38 @@
-import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { FiCheck, FiArrowRight } from 'react-icons/fi';
 import SEO from '../components/SEO';
+import ServicePlanning from '../components/ServicePlanning';
 import { PageLoader, SkeletonCard } from '../components/LoadingSpinner';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
 import { PHONE_DISPLAY, PHONE_TEL } from '../constants/site';
-import { servicesAPI } from '../services/api';
+import { usePublicData } from '../context/PublicDataContext';
 import { getServiceIcon } from '../utils/serviceIcons';
 import VideoShowcase from '../components/home/VideoShowcase';
+import { PAGE_SEO } from '../constants/seo';
+import { responsiveImage } from '../utils/images';
 
 const Services = () => {
   const { content } = useOutletContext();
-  const [services, setServices] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    servicesAPI
-      .getAll()
-      .then((res) => setServices(res.data.data || []))
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, []);
+  const { services } = usePublicData();
+  const loading = false;
 
   if (!content) return <PageLoader />;
 
   return (
     <>
-      <SEO
-        title="Our Services | Premium DJ & Event Entertainment"
-        description="Explore wedding DJ, Sweet 16, birthday party, photo booth, photography, and videography services from This Magic Moment — DJ Adam, New Jersey."
-      />
+      <SEO page="services" />
 
       {/* Hero */}
       <section className="relative pt-32 pb-20 bg-navy overflow-hidden">
         <div className="absolute inset-0 bg-hero-gradient opacity-90" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1920&q=80')] bg-cover bg-center opacity-20" />
+        <img {...responsiveImage('/images/hero-1672.webp')} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20" loading="eager" fetchPriority="high" />
         <div className="container-custom relative z-10 text-center px-4">
           <p className="text-teal font-semibold uppercase tracking-[0.3em] text-sm mb-4 animate-fade-in">
             What We Offer
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white uppercase tracking-tight mb-6 animate-slide-up">
-            Our <span className="heading-script normal-case text-teal">Services</span>
+            {PAGE_SEO.services.h1}
           </h1>
           <p className="text-white text-lg md:text-xl max-w-3xl mx-auto leading-relaxed animate-fade-in">
             From unforgettable wedding receptions to high-energy Sweet 16s, milestone birthdays, and premium private
@@ -80,7 +71,7 @@ const Services = () => {
                   <div className="w-full lg:w-1/2 min-h-[280px] lg:min-h-[480px]">
                     {service.imageUrl ? (
                       <img
-                        src={service.imageUrl}
+                        {...responsiveImage(service.imageUrl, [640, 960, 1280], '(min-width: 1024px) 50vw, 100vw')}
                         alt={service.title}
                         className="w-full h-full min-h-[280px] lg:min-h-[480px] object-cover"
                         loading="lazy"
@@ -120,6 +111,8 @@ const Services = () => {
                           ))}
                         </ul>
                       )}
+
+                      <ServicePlanning slug={service.slug} />
 
                       <div className="flex flex-col sm:flex-row gap-3">
                         <Button to={service.ctaLink || '/contact'} variant="primary">

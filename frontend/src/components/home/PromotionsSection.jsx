@@ -12,10 +12,9 @@ const iconMap = {
 };
 
 const PromotionsSection = ({ promotions, loading }) => {
-  if (!loading && promotions.length === 0) return null;
 
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
+    <section id="offers" className="section-padding bg-white relative overflow-hidden scroll-mt-20">
       <div className="absolute top-0 right-0 w-96 h-96 bg-teal/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-navy/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
 
@@ -25,6 +24,8 @@ const PromotionsSection = ({ promotions, loading }) => {
           title="Special Offers"
           subtitle="Take advantage of our current promotions and save on premium DJ entertainment for your next celebration. Premium dates fill up quickly — secure your savings today."
         />
+
+        {!loading && promotions.length === 0 && <p className="text-center text-gray-600 mb-6">Ask DJ Adam about current package options and offers for your date. <a href="/contact#event-inquiry" className="text-teal underline">Request a custom quote.</a></p>}
 
         {loading ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

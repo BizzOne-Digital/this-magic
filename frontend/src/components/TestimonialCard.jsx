@@ -1,12 +1,31 @@
+import { Link } from 'react-router-dom';
 import StarRating from './StarRating';
 import { FiMapPin } from 'react-icons/fi';
+import { responsiveImage } from '../utils/images';
+
+const ReviewSource = ({ testimonial, className = '' }) => {
+  const parts = [testimonial.isUserSubmitted ? 'Submitted on this website' : testimonial.sourceLabel || 'Client testimonial; original source not supplied'];
+  for (const [key, label] of [['eventDate', 'Event'], ['reviewDate', 'Review']]) {
+    const date = testimonial[key] && new Date(testimonial[key]);
+    if (date && !Number.isNaN(date.getTime())) parts.push(`${label}: ${date.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' })}`);
+  }
+  const sourceUrl = /^https?:\/\/[^\s]+$/i.test(testimonial.sourceUrl || '') ? testimonial.sourceUrl : null;
+  const service = /wedding/i.test(testimonial.eventType) ? ['wedding-dj', 'Wedding DJ services']
+    : /sweet.?16/i.test(testimonial.eventType) ? ['sweet-16-dj', 'Sweet 16 DJ services']
+    : /birthday/i.test(testimonial.eventType) ? ['birthday-parties', 'Birthday DJ services']
+    : ['private-events', 'Private event entertainment'];
+  return <div className={`text-xs text-white/70 mt-1 ${className}`}>
+    <p>{parts.join(' ? ')} {sourceUrl && <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="text-teal underline">Read original review</a>}</p>
+    <Link to={`/services#${service[0]}`} className="inline-block mt-2 text-teal underline">{service[1]}</Link>
+  </div>;
+};
 
 const TestimonialImage = ({ src, alt, containerClass = '', imageClass = '' }) => (
   <div
     className={`w-full bg-navy/40 flex items-center justify-center overflow-hidden ${containerClass}`}
   >
     <img
-      src={src}
+      {...responsiveImage(src, [400, 800], '(min-width: 1024px) 33vw, 100vw')}
       alt={alt}
       className={`w-full h-full object-contain object-center ${imageClass}`}
       loading="lazy"
@@ -43,6 +62,7 @@ const TestimonialCard = ({ testimonial, variant = 'grid', className = '' }) => {
             <div className="flex items-center justify-between flex-wrap gap-3">
               <div>
                 <p className="text-teal font-bold">{testimonial.clientName}</p>
+                <ReviewSource testimonial={testimonial} />
                 {testimonial.location && (
                   <p className="text-white text-sm flex items-center gap-1 mt-1">
                     <FiMapPin className="text-teal" />
@@ -77,6 +97,7 @@ const TestimonialCard = ({ testimonial, variant = 'grid', className = '' }) => {
               &ldquo;{testimonial.review}&rdquo;
             </blockquote>
             <p className="text-teal font-bold">{testimonial.clientName}</p>
+            <ReviewSource testimonial={testimonial} />
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 mt-2 text-sm text-white">
               <span className="bg-teal/20 text-teal px-3 py-1 rounded-full text-xs font-semibold uppercase">
                 {testimonial.eventType}
@@ -120,6 +141,7 @@ const TestimonialCard = ({ testimonial, variant = 'grid', className = '' }) => {
         </p>
         <div className="border-t border-white/10 pt-4">
           <p className="text-white font-semibold text-sm">{testimonial.clientName}</p>
+          <ReviewSource testimonial={testimonial} />
           {testimonial.location && (
             <p className="text-white text-xs mt-1 flex items-center gap-1">
               <FiMapPin className="text-teal" />

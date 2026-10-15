@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import { FiAward, FiStar, FiUsers } from 'react-icons/fi';
 import { MdCelebration } from 'react-icons/md';
@@ -9,28 +9,22 @@ import TestimonialCard from '../components/TestimonialCard';
 import SubmitTestimonialForm from '../components/SubmitTestimonialForm';
 import Button from '../components/Button';
 import ReviewLinks from '../components/ReviewLinks';
-import { testimonialsAPI } from '../services/api';
+import { usePublicData } from '../context/PublicDataContext';
+import { PAGE_SEO } from '../constants/seo';
+import { responsiveImage } from '../utils/images';
 
 const statItems = [
   { icon: MdCelebration, label: '2500+ Events', sub: 'Celebrations DJ\'d' },
   { icon: FiStar, label: '5-Star Rated', sub: 'Consistently Top Reviews' },
-  { icon: FiUsers, label: '250+ Reviews', sub: 'Happy Clients' },
+  { icon: FiUsers, label: 'Client Feedback', sub: 'Read Individual Stories' },
   { icon: FiAward, label: '30+ Years', sub: 'Professional Experience' },
 ];
 
 const Testimonials = () => {
   const { content } = useOutletContext();
-  const [testimonials, setTestimonials] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const { testimonials } = usePublicData();
+  const loading = false;
   const [filter, setFilter] = useState('All');
-
-  useEffect(() => {
-    testimonialsAPI
-      .getAll()
-      .then((res) => setTestimonials(res.data.data || []))
-      .catch(console.error)
-      .finally(() => setLoading(false));
-  }, []);
 
   if (!content) return <PageLoader />;
 
@@ -38,30 +32,31 @@ const Testimonials = () => {
   const eventTypes = ['All', ...new Set(testimonials.map((t) => t.eventType))];
   const filtered =
     filter === 'All' ? testimonials : testimonials.filter((t) => t.eventType === filter);
-  const featured = testimonials.filter((t) => t.isFeatured);
+  const featured = testimonials.filter((t) => t.isFeatured).slice(0, 4);
+  // Featured reviews are shown in full above; don't repeat them in the unfiltered list.
+  const featuredIds = new Set(featured.map((t) => t._id));
+  const listed = filter === 'All' ? filtered.filter((t) => !featuredIds.has(t._id)) : filtered;
 
   return (
     <>
-      <SEO
-        title={content.seo?.testimonialsTitle?.split('|')[0]?.trim() || 'Testimonials'}
-        description={content.seo?.testimonialsDescription}
-        url="https://www.thismagicmomentnj.com/testimonials"
-      />
+      <SEO page="testimonials" />
 
       <section className="relative min-h-[50vh] flex items-center bg-navy overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=80"
-            alt="Happy wedding guests"
+            {...responsiveImage('/images/hero-1672.webp')}
+            alt="Guests celebrating on a dance floor"
             className="w-full h-full object-cover"
             loading="eager"
           />
         </div>
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative z-10 container-custom text-center px-4 pt-28 pb-16 animate-slide-up">
-          <p className="heading-script text-2xl md:text-3xl mb-3">Real Reviews</p>
-          <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
+          <p className="heading-script text-2xl md:text-3xl mb-3">
             {page.heroTitle || 'What Our Clients Say'}
+          </p>
+          <h1 className="text-4xl md:text-6xl font-black text-white uppercase tracking-wide mb-6">
+            {PAGE_SEO.testimonials.h1}
           </h1>
           <p className="text-white text-lg max-w-3xl mx-auto leading-relaxed mb-6">
             {page.heroSubtitle ||
@@ -96,9 +91,9 @@ const Testimonials = () => {
       <section className="section-padding bg-navy border-t border-white/10">
         <div className="container-custom">
           <SectionHeading
-            scriptAccent="Verified Reviews"
+            scriptAccent="Review Sources"
             title="Read More on The Knot, WeddingWire & Google"
-            subtitle="See hundreds of verified reviews from real couples and families who booked This Magic Moment."
+            subtitle="Browse the business profiles on The Knot and WeddingWire, or search Google for reviews. These links are separate from the individual client feedback below."
             light
           />
           <ReviewLinks links={content.reviewLinks} />
@@ -114,7 +109,7 @@ const Testimonials = () => {
               subtitle="These standout testimonials represent the experience you can expect when you book This Magic Moment."
             />
             <div className="space-y-8">
-              {featured.slice(0, 4).map((testimonial) => (
+              {featured.map((testimonial) => (
                 <TestimonialCard key={testimonial._id} testimonial={testimonial} variant="featured" />
               ))}
             </div>
@@ -153,7 +148,7 @@ const Testimonials = () => {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filtered.map((testimonial) => (
+              {listed.map((testimonial) => (
                 <TestimonialCard key={testimonial._id} testimonial={testimonial} variant="grid" />
               ))}
             </div>

@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import { realTestimonials } from '../data/realTestimonials.js';
+
+const emailReviews = new Set(realTestimonials.map((review) => review.review));
 
 const testimonialSchema = new mongoose.Schema(
   {
@@ -10,6 +13,12 @@ const testimonialSchema = new mongoose.Schema(
     publicId: { type: String, default: '' },
     location: { type: String, default: '' },
     eventDate: { type: Date },
+    reviewDate: { type: Date },
+    sourceLabel: { type: String, trim: true, default: '' },
+    sourceUrl: {
+      type: String, trim: true, default: '',
+      validate: { validator: (value) => !value || /^https?:\/\/[^\s]+$/i.test(value), message: 'Review source must be an HTTP or HTTPS URL' },
+    },
     isActive: { type: Boolean, default: true },
     isFeatured: { type: Boolean, default: false },
     isUserSubmitted: { type: Boolean, default: false },
@@ -20,7 +29,13 @@ const testimonialSchema = new mongoose.Schema(
     },
     order: { type: Number, default: 0 },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { transform: (_document, review) => {
+      if (!review.sourceLabel && emailReviews.has(review.review)) review.sourceLabel = 'Client feedback shared by email';
+      return review;
+    } },
+  }
 );
 
 const Testimonial = mongoose.model('Testimonial', testimonialSchema);

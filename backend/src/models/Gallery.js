@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { getGalleryText } from '../data/galleryDescriptions.js';
 
 const gallerySchema = new mongoose.Schema(
   {
@@ -14,7 +15,15 @@ const gallerySchema = new mongoose.Schema(
     order: { type: Number, default: 0 },
     isActive: { type: Boolean, default: true },
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { transform: (_document, item) => {
+      const text = getGalleryText(item);
+      item.title = text.caption;
+      item.caption = text.alt;
+      return item;
+    } },
+  }
 );
 
 const Gallery = mongoose.model('Gallery', gallerySchema);

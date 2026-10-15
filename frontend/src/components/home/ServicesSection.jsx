@@ -4,12 +4,13 @@ import SectionHeading from '../SectionHeading';
 import Button from '../Button';
 import { SkeletonCard } from '../LoadingSpinner';
 import { getServiceIcon } from '../../utils/serviceIcons';
+import { responsiveImage } from '../../utils/images';
 
 const IconicServicesRow = ({ services }) => {
   const topSix = services.slice(0, 6);
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-4">
+    <nav aria-label="Service shortcuts" className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-4">
       {topSix.map((service, index) => {
         const Icon = getServiceIcon(service.icon);
         const isTeal = index % 2 === 1;
@@ -31,16 +32,16 @@ const IconicServicesRow = ({ services }) => {
                 }`}
               />
             </div>
-            <h3 className="text-sm md:text-base font-bold text-navy uppercase tracking-wide">
+            <span className="text-sm md:text-base font-bold text-navy uppercase tracking-wide">
               {service.title}
-            </h3>
+            </span>
             <p className="text-xs text-gray-500 mt-1 hidden md:block line-clamp-2">
               {service.shortDescription}
             </p>
           </Link>
         );
       })}
-    </div>
+    </nav>
   );
 };
 
@@ -87,7 +88,7 @@ const ServicesSection = ({ services, loading }) => {
                     {service.imageUrl && (
                       <div className="relative h-48 overflow-hidden">
                         <img
-                          src={service.imageUrl}
+                          {...responsiveImage(service.imageUrl, [400, 800], '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw')}
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           loading="lazy"
@@ -106,9 +107,6 @@ const ServicesSection = ({ services, loading }) => {
                       <p className="text-white text-sm leading-relaxed mb-4">
                         {service.shortDescription}
                       </p>
-                      <p className="text-white text-sm leading-relaxed mb-6 line-clamp-3">
-                        {service.description}
-                      </p>
 
                       {service.features?.length > 0 && (
                         <ul className="space-y-2 mb-6">
@@ -122,10 +120,10 @@ const ServicesSection = ({ services, loading }) => {
                       )}
 
                       <Link
-                        to={service.ctaLink || '/contact'}
+                        to={`/services#${service.slug}`}
                         className="inline-flex items-center text-teal font-bold uppercase text-sm tracking-wider hover:text-white transition-colors"
                       >
-                        {service.ctaLabel || 'Learn More'} →
+                        {service.title} details →
                       </Link>
                     </div>
                   </article>

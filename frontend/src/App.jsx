@@ -1,16 +1,21 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import MainLayout from './layouts/MainLayout';
 import { PageLoader } from './components/LoadingSpinner';
 import ProtectedRoute from './admin/components/ProtectedRoute';
 import AdminLayout from './admin/layouts/AdminLayout';
 import ScrollToTop from './components/ScrollToTop';
+import { PublicDataProvider } from './context/PublicDataContext';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const Testimonials = lazy(() => import('./pages/Testimonials'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Guides = lazy(() => import('./pages/Guides'));
+const Guide = lazy(() => import('./pages/Guide'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const AdminLogin = lazy(() => import('./admin/pages/Login'));
 const Dashboard = lazy(() => import('./admin/pages/Dashboard'));
@@ -22,9 +27,18 @@ const AdminGallery = lazy(() => import('./admin/pages/Gallery'));
 const AdminContent = lazy(() => import('./admin/pages/Content'));
 const AdminSettings = lazy(() => import('./admin/pages/Settings'));
 
+// Admin screens are tools, not search landing pages.
+const AdminNoIndex = () => (
+  <Helmet>
+    <title>Admin | This Magic Moment</title>
+    <meta name="robots" content="noindex, nofollow" />
+  </Helmet>
+);
+
 function App() {
   return (
     <Suspense fallback={<PageLoader />}>
+      <PublicDataProvider>
       <ScrollToTop />
       <Routes>
         {/* Public Routes */}
@@ -34,14 +48,26 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="testimonials" element={<Testimonials />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="blog/categories/party-dj" element={<Guides />} />
+          <Route path="post/:slug" element={<Guide />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
 
         {/* Admin Routes */}
-        <Route path="admin/login" element={<AdminLogin />} />
+        <Route
+          path="admin/login"
+          element={
+            <>
+              <AdminNoIndex />
+              <AdminLogin />
+            </>
+          }
+        />
         <Route
           path="admin"
           element={
             <ProtectedRoute>
+              <AdminNoIndex />
               <AdminLayout />
             </ProtectedRoute>
           }
@@ -56,10 +82,8 @@ function App() {
           <Route path="content" element={<AdminContent />} />
           <Route path="settings" element={<AdminSettings />} />
         </Route>
-
-        {/* Catch all */}
-        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      </PublicDataProvider>
     </Suspense>
   );
 }

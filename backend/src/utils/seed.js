@@ -57,7 +57,7 @@ const seed = async () => {
         ctaLabel: 'Plan Your Sweet 16',
         features: ['Grand entrance coordination', 'Candle ceremony music', 'Age-appropriate playlists', 'Interactive games & activities', 'Photo moment coordination', 'Parent-approved song lists'],
         order: 2,
-        imageUrl: 'https://images.unsplash.com/photo-1530103862673-de8c9debad1d?w=800&q=80',
+        imageUrl: '/images/event-3-800.webp',
       },
       {
         title: 'Birthday Parties',
@@ -69,7 +69,7 @@ const seed = async () => {
         ctaLabel: 'Celebrate in Style',
         features: ['All ages welcome', 'Custom theme playlists', 'Interactive entertainment', 'Flexible packages', 'Indoor & outdoor setups', 'Special milestone coordination'],
         order: 3,
-        imageUrl: 'https://images.unsplash.com/photo-1464349153735-7db50ed83c7b?w=800&q=80',
+        imageUrl: '/images/event-4-800.webp',
       },
       {
         title: 'Private Events',
@@ -163,10 +163,10 @@ const seed = async () => {
     // Gallery (using Unsplash placeholders - admin can replace via Cloudinary)
     const galleryItems = [
       { title: 'Wedding Dance Floor', caption: 'Packed dance floor at a luxury NJ wedding', category: 'Weddings', order: 1, imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=80', publicId: 'seed-wedding-1' },
-      { title: 'DJ Setup', caption: 'Professional DJ booth with premium sound', category: 'DJ', order: 2, imageUrl: 'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=600&q=80', publicId: 'seed-dj-1' },
-      { title: 'Sweet 16 Celebration', caption: 'Epic Sweet 16 party energy', category: 'Sweet 16s', order: 3, imageUrl: 'https://images.unsplash.com/photo-1530103862673-de8c9debad1d?w=600&q=80', publicId: 'seed-sweet16-1' },
+      { title: 'DJ Setup', caption: 'Professional DJ booth with premium sound', category: 'DJ', order: 2, imageUrl: '/images/event-1-800.webp', publicId: 'seed-dj-1' },
+      { title: 'Sweet 16 Celebration', caption: 'Epic Sweet 16 party energy', category: 'Sweet 16s', order: 3, imageUrl: '/images/event-3-800.webp', publicId: 'seed-sweet16-1' },
       { title: 'Photo Booth Fun', caption: 'Guests loving the photo booth experience', category: 'Photo Booth', order: 4, imageUrl: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&q=80', publicId: 'seed-photobooth-1' },
-      { title: 'Birthday Bash', caption: 'Milestone birthday celebration', category: 'Birthdays', order: 5, imageUrl: 'https://images.unsplash.com/photo-1464349153735-7db50ed83c7b?w=600&q=80', publicId: 'seed-birthday-1' },
+      { title: 'Birthday Bash', caption: 'Milestone birthday celebration', category: 'Birthdays', order: 5, imageUrl: '/images/event-4-800.webp', publicId: 'seed-birthday-1' },
       { title: 'Wedding Ceremony', caption: 'Beautiful ceremony moment', category: 'Weddings', order: 6, imageUrl: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&q=80', publicId: 'seed-wedding-2' },
       { title: 'Event Photography', caption: 'Capturing candid celebration moments', category: 'Photography', order: 7, imageUrl: 'https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=600&q=80', publicId: 'seed-photo-1' },
       { title: 'Cinematic Highlights', caption: 'Professional event videography', category: 'Videography', order: 8, imageUrl: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&q=80', publicId: 'seed-video-1' },
@@ -184,7 +184,7 @@ const seed = async () => {
           scriptLine: 'your event needs',
         },
         subheading: 'Weddings • Sweet 16s • Birthdays • Private Events • Photo Booth • Photography • Videography',
-        imageUrl: 'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=1920&q=80',
+        imageUrl: '/images/event-1-800.webp',
         primaryCta: 'Book Your Date',
         secondaryCta: 'Check Availability',
       },
@@ -198,7 +198,7 @@ const seed = async () => {
         ],
         ctaLabel: 'Learn More',
         imageUrls: [
-          'https://images.unsplash.com/photo-1571266028247-4d2a4b4e4b3a?w=600&q=80',
+          '/images/event-1-800.webp',
           'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80',
           'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&q=80',
           'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&q=80',

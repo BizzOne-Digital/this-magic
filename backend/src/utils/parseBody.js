@@ -7,6 +7,7 @@ export const parseTestimonialBody = (body) => {
   }
   if (data.rating) data.rating = Number(data.rating);
   if (data.order !== undefined && data.order !== '') data.order = Number(data.order);
-  if (data.eventDate === '') delete data.eventDate;
+  if (data.eventDate === '') data.eventDate = null;
+  if (data.reviewDate === '') data.reviewDate = null;
   return data;
 };

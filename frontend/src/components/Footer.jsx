@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaFacebookF } from 'react-icons/fa';
-import { getLogoUrl, LOGO_PATH, PHONE_TEL } from '../constants/site';
+import { getFacebookProfileUrl, getLogoUrl, LOGO_PATH, PHONE_TEL } from '../constants/site';
 
 const Footer = ({ content }) => {
   const social = content?.social || {};
@@ -9,6 +9,7 @@ const Footer = ({ content }) => {
   const phone = contact.phone || '732-829-2344';
   const email = contact.email || 'thismagicmomentllc@gmail.com';
   const logoSrc = getLogoUrl(content?.logo?.imageUrl);
+  const facebookUrl = getFacebookProfileUrl(social.facebookUrl);
 
   return (
     <footer className="bg-navy text-white">
@@ -19,6 +20,8 @@ const Footer = ({ content }) => {
               <img
                 src={logoSrc}
                 alt="This Magic Moment — DJ Adam"
+                width="405"
+                height="184"
                 className="h-14 md:h-16 w-auto max-w-[220px] object-contain"
                 onError={(e) => {
                   e.currentTarget.src = LOGO_PATH;
@@ -42,17 +45,21 @@ const Footer = ({ content }) => {
             >
               <FaInstagram />
             </a>
-            <a
-              href={social.facebookUrl || 'https://facebook.com'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-teal hover:border-teal transition-all"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
+            {facebookUrl && (
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center hover:bg-teal hover:border-teal transition-all"
+                aria-label="Facebook"
+              >
+                <FaFacebookF />
+              </a>
+            )}
           </div>
         </div>
+
+        <nav aria-label="Planning resources" className="mt-8 text-center"><Link to="/blog/categories/party-dj" className="text-teal hover:text-white underline">DJ & Party Planning Guides</Link></nav>
 
         <div className="mt-8 pt-8 border-t border-white/10 text-center">
           <p className="text-lg md:text-xl font-bold text-white">
@@ -64,11 +71,6 @@ const Footer = ({ content }) => {
             <a href={`mailto:${email}`} className="text-teal hover:text-white transition-colors font-semibold">
               {email}
             </a>
-          </p>
-          <p className="mt-4 text-xs text-gray-500">
-            <Link to="/admin/login" className="hover:text-teal transition-colors opacity-50">
-              Admin
-            </Link>
           </p>
         </div>
       </div>
