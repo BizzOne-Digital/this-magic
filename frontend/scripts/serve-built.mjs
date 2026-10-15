@@ -22,7 +22,7 @@ export function createPreviewServer(port = 4173) {
         response.writeHead(308, { Location: redirect.destination });
         return response.end();
       }
-      if (pathname !== '/' && pathname.endsWith('/')) {
+      if (config.trailingSlash === false && pathname !== '/' && pathname.endsWith('/')) {
         response.writeHead(308, { Location: pathname.slice(0, -1) + url.search });
         return response.end();
       }

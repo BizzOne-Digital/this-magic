@@ -81,3 +81,6 @@ for (const source of ['/index.html', '/djservices', '/affordable-dj-nj-special-s
 for (const pathname of ['/admin', '/admin/(.*)']) assert.ok(hosting.headers.some((rule) => rule.source === pathname && rule.headers.some((header) => header.key === 'X-Robots-Tag' && /noindex/.test(header.value))));
 await access(path.join(dist, new URL(DEFAULT_OG_IMAGE.url).pathname));
 console.log(`SEO acceptance checks passed for ${pages.length} complete public pages, all eight legacy URLs, crawl files, images, links and utility shells.`);
+
+assert.equal(hosting.trailingSlash, undefined, 'Explicit slash redirects allow legacy offers to redirect directly');
+for (const page of pages.filter((page) => page.path !== '/')) assert.ok(hosting.redirects.some((rule) => rule.source === page.path + '/' && rule.destination === page.path && rule.permanent), 'Canonical slash policy: ' + page.path);

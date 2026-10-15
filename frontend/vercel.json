@@ -1,5 +1,4 @@
 {
-  "trailingSlash": false,
   "redirects": [
     {
       "source": "/index.html",
@@ -24,6 +23,106 @@
     {
       "source": "/post/wedding-entertainment-emergencies-backupplans",
       "destination": "/post/wedding-entertainment-emergencies-backup-plans",
+      "permanent": true
+    },
+    {
+      "source": "/blog/categories/party-dj/",
+      "destination": "/blog/categories/party-dj",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/services/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials/",
+      "destination": "/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/post/wedding-entertainment-emergencies-backup-plans/",
+      "destination": "/post/wedding-entertainment-emergencies-backup-plans",
+      "permanent": true
+    },
+    {
+      "source": "/post/stress-free-bar-mitzvah-dj-booking-in-new-jersey/",
+      "destination": "/post/stress-free-bar-mitzvah-dj-booking-in-new-jersey",
+      "permanent": true
+    },
+    {
+      "source": "/post/music-selection-guidelines-for-bat-mitzvah-celebration/",
+      "destination": "/post/music-selection-guidelines-for-bat-mitzvah-celebration",
+      "permanent": true
+    },
+    {
+      "source": "/post/music-trends-that-make-sweet-16-parties-memorable/",
+      "destination": "/post/music-trends-that-make-sweet-16-parties-memorable",
+      "permanent": true
+    },
+    {
+      "source": "/djservices/",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/admin/",
+      "destination": "/admin",
+      "permanent": true
+    },
+    {
+      "source": "/admin/login/",
+      "destination": "/admin/login",
+      "permanent": true
+    },
+    {
+      "source": "/admin/dashboard/",
+      "destination": "/admin/dashboard",
+      "permanent": true
+    },
+    {
+      "source": "/admin/leads/",
+      "destination": "/admin/leads",
+      "permanent": true
+    },
+    {
+      "source": "/admin/services/",
+      "destination": "/admin/services",
+      "permanent": true
+    },
+    {
+      "source": "/admin/testimonials/",
+      "destination": "/admin/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/admin/promotions/",
+      "destination": "/admin/promotions",
+      "permanent": true
+    },
+    {
+      "source": "/admin/gallery/",
+      "destination": "/admin/gallery",
+      "permanent": true
+    },
+    {
+      "source": "/admin/content/",
+      "destination": "/admin/content",
+      "permanent": true
+    },
+    {
+      "source": "/admin/settings/",
+      "destination": "/admin/settings",
       "permanent": true
     }
   ],
